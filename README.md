@@ -6,8 +6,6 @@
 
 <p style="margin-left:1.2rem;"><b>Documentación Técnica Chatbot Universidad ECCI</b></p>
 
-<li style="margin-left:2rem; list-style:none"><a href="#indice">Índice</a></li>
-<li style="margin-left:2rem; list-style:none"><a href="#indiceImagenes">Índice de Imágenes</a></li>
 <ol style="margin-left:1rem;">
 <li><a href="#introduccion">Introducción</a></li>
 <li><a href="#consideracion">Consideraciones y Requerimientos Previos</a></li>
@@ -66,6 +64,7 @@
 
 ---
 <h3 id="indiceImagenes"></h3>
+
 ### Índice de Imágenes
 
 <ol style="list-style:none">
