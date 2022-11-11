@@ -122,7 +122,9 @@
 
 ---
 <h4 id="introduccion"></h4>
+
 #### 1. Introducción 
+
 <p style="margin-left:1.2rem">La presente documentación tiene como objetivo explicar detalladamente la arquitectura
 técnica del proyecto Chatbot para la Universidad ECCI, su implementación técnica y
 descripción tecnológica.</p>
@@ -135,10 +137,13 @@ necesarios. Por último, se relatan algunas posibles dificultades comunes y
 recomendaciones futuras para la extensibilidad del proyecto.</p>
 
 <h4 id="consideracion"></h4>
+
 #### 2. Consideraciones y Requerimientos Previos
 
 <h5 id="cuentasUsuario"></h5>
+
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">I. Cuentas de Usuario y Plataformas</h5>
+
 <p style="margin-left:2rem">La infraestructura del proyecto requiere que se cuente con algunas cuentas de usuario en diversas plataformas que apoyan el funcionamiento y despliegue de la arquitectura en la nube.</p>
 
 <p style="margin-left:2rem">Para algunas de estas cuentas es necesario realizar un proceso de verificación y
@@ -185,7 +190,9 @@ cuanto al servicio que ofrece.</p>
 > https://www.mongodb.com/cloud
 
 <h5 id="validacionCuentas"></h5>
+
 ##### <h5 style="font-size: 18.2px; margin-left: 1.2rem">II. Validación de Cuentas</h5>
+
 <p style="margin-left:2rem">Adicionalmente a la creación de cuentas detallada en la sección anterior, es necesario realizar un proceso adicional de verificación de identidad y legalidad de la organización que se quiere registrar con Facebook Business.</p>
 
 <p style="margin-left:2rem">Facebook es muy riguroso en su habilitación de servicios comerciales, y es por esto que solicita que cualquier organización que requiera utilizar algunos de sus servicios principales de manera comercial deba estar debidamente registrada como organización o empresa comercial, y debe presentar documentos de soporte legal que certifiquen:</p>
@@ -206,7 +213,9 @@ perfil de Facebook Business verificado correctamente, desde el siguiente enlace:
 <p style="margin-left:2rem">Por último, dependiendo del método con el que se realice la habilitación del número telefónico para la creación de la cuenta de Whatsapp, debe realizarse una verificación de identidad similar a la solicitada por Facebook Business. Esto es, en el caso de optar por la compra de un número telefónico desde el catálogo de números disponibles en la consola de 360 Dialog, debe realizarse este proceso adicional de verificación con 360 Dialog.</p>
 
 <h4 id="descripcionArquitectonica"></h4>
+
 #### 3. Descripción Arquitectónica
+
 <div>
 <p style="text-align:center"><image
 src="./Img/ArquitecturaChatbotECCI.png" alt="Descripción Arquitectónica Chatbot para la Universidad ECCI" align="center" width="700px">
@@ -222,9 +231,11 @@ src="./Img/ArquitecturaChatbotECCI.png" alt="Descripción Arquitectónica Chatbo
 <p style="margin-left:1.2rem">La conexión con el chatbot está disponible para los usuarios de Whatsapp a través de 360 Dialog, el cual es un proveedor de comunicaciones en la nube que cuenta con el servicio de mensajería de para Whatsapp, permitiendo la comunicación y administración de la cuenta y el canal de whatsapp, así como algunas características adicionales como soporte técnico, aprobación de plantillas para envíos masivos, gestión de números y cuentas de whatsapp, entre otros. De la misma forma, la arquitectura cuenta con soporte para la conexión de usuarios con asesores humanos, quienes pueden comunicarse con los usuarios a través del chatbot mediante Whatsapp o Telegram, así como retomar un usuario inactivo.</p>
 
 <h4 id="implementacion"></h4>
+
 #### 4. Implementación y Despliegue
 
 <h5 id="IBMWatson"></h5>
+
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">I. IBM Watson Assistant</h5>
 
 <p style="margin-left:2rem">Watson Assistant es un servicio de IBM Cloud basado en la inteligencia artificial, el cual
@@ -236,6 +247,7 @@ nube o local, lo que significa que la IA más inteligente finalmente está dispo
 cualquier lugar donde la necesite.</p>
 
 <h5 id="funcionamiento"></h5>
+    
 ##### <h5 style="font-size: 17.2px; margin-left:2rem">a. Funcionamiento</h5>
 
 <div style="margin-left:2.5rem">
@@ -252,6 +264,7 @@ src="./Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align
 </ol>
 
 <h5 id="crearasistente"></h5>
+    
 ##### <h5 style="font-size: 17.2px; margin-left:2rem">b. Crear un Asistente Watson Assistant</h5>
 
 <p style="margin-left:3rem">El servicio se crea desde la consola de IBM Cloud buscando el servicio en el catálogo, el plan Lite permite un uso gratuito con algunas limitaciones en el servicio, al crear el servicio se debe crear un skill el cual contendrá los componentes de Intenciones, Entidades y Diálogo.</p>
@@ -301,12 +314,13 @@ src="./Img/AsistenteUECCIWatson.png" alt="Asistente UECCI en Watson Assistant" a
 </div>
 
 <h5 id="intenciones"></h5>
+    
 ##### <h5 style="font-size: 17.2px; margin-left:2rem">c. Intenciones</h5>
 
 <p style="margin-left: 3rem">Las intenciones en Watson Assistant se activan a través de un concepto conocido como confianza. Watson Assistant no solo crea un modelo para devolver cuál es la intención correcta. De hecho, crea un modelo diferente para cada intento. Cuando un usuario hace una pregunta, esa expresión se envía a cada modelo de intención. Cada uno de esos modelos de intención devuelve una puntuación de confianza, que indica qué tan "seguro" es el modelo de que la expresión se ajusta a esa intención. Cuando verifica si # < intent > se cumple la condición, eso esencialmente solo agrega esas puntuaciones y verifica si la intención de puntuación más alta es la que está verificando. Para capturar múltiples intenciones de un solo enunciado de usuario, vamos a seguir 3 pasos.</p>
 
-<ol style="margin-left:3.2rem">
-    <li>Definir un umbral de confianza: definiremos una variable constante para ajustar la sensibilidad para capturar múltiples intenciones. Establecer esto muy bajo podría llevar a capturar demasiados intentos. A la inversa, establecerlo demasiado alto podría resultar en que no se capturen las intenciones en la expresión del usuario.</li>
+<ol style="margin-left:3.2rem"> 
+   <li>Definir un umbral de confianza: definiremos una variable constante para ajustar la sensibilidad para capturar múltiples intenciones. Establecer esto muy bajo podría llevar a capturar demasiados intentos. A la inversa, establecerlo demasiado alto podría resultar en que no se capturen las intenciones en la expresión del usuario.</li>
     <li>Capturar intenciones que superen el umbral de confianza: en este paso, veremos cómo puede capturar las intenciones utilizando el umbral definido previamente y luego guardarlas para usarlas más adelante.</li>
     <li>Iterar a través de la lista de intenciones: utilizando algunos trucos de diálogo, veremos cómo podemos construir un bucle en Watson Assistant para iterar a través de cada una de las intenciones capturadas previamente una por una.</li>
 </ol>
@@ -326,6 +340,7 @@ src="./Img/EjemploIntencion.png" alt="Ejemplo de Intención: Aspirante" align="c
 </div>
 
 <h5 id="entidades"></h5>
+    
 ##### <h5 style="font-size: 17.2px; margin-left:2rem">d. Entidades</h5>
 
 <p style="margin-left: 3rem">Una entidad representa un término o un objeto que da contexto a una acción. Las entidades representan información en la entrada de usuario que es relevante para la finalidad de la intención. Los nombres de las entidades van precedidos del símbolo @entidad. Una entidad puede tener varios valores, y a cada uno de estos valores se le configura sinónimos, los cuales son las diferentes maneras en que puede ser mencionado ese valor de la entidad.</p>
@@ -337,6 +352,7 @@ src="./Img/Entidades.png" alt="Entidades Chat UECCI" align="center" width="700px
 </div>
 
 <h5 id="dialogo"></h5>
+    
 ##### <h5 style="font-size: 17.2px; margin-left:2rem">e. Diálogo</h5>
 
 <p style="margin-left: 3rem">La estructura de diálogo está basada en nodos, es decir tiene forma de árbol. Cuando un mensaje es analizado por Watson Assistant, dicho mensaje recorre cada uno de estos nodos en el orden en el que han sido definidos, para encontrar una intención y una entidad que tengan relación con dicho mensaje. Cada nodo del diálogo contiene, como mínimo, una condición; y puede contener una respuesta o textos o varios nodos hijos que de igual forma deben contener una condición y una respuesta. El servicio procesa el diálogo desde el primer nodo en el árbol hasta el último. A medida que recorre por el árbol, si el servicio encuentra una condición que se cumple, activa dicho nodo. Luego se mueve por el nodo que ha sido activado para comparar la entrada del usuario con las condiciones de los nodos hijos, desde el primer nodo hijo hasta el último.</p>
@@ -356,6 +372,7 @@ src="./Img/Nodo.png" alt="Nodo Menú en Diálogo Chat UECCI" align="center" widt
 <p style="margin-left: 3rem"><b>Nota: </b>Mensaje no comprendido (anything else) Este nodo se implementó como un respaldo si Watson Assistant no comprende el mensaje, y se le solicita al usuario que repita la pregunta de otra manera.</p>
 
 <h5 id="IBMObject"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">II. IBM Object Storage</h5>
 
 <p style="margin-left:2rem">El componente de Object Storage es un servicio de almacenamiento en la nube que permite subir archivos estáticos para ser accedidos desde internet de forma rápida y segura. Es parte de la suite de servicios de IBM, y está disponible desde el plan Lite.</p>
@@ -418,9 +435,11 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
 <p style="margin-left:2rem">Y contarán con un URL público de objeto, el cual es la URL pública para acceder a ese objeto almacenado en la nube de IBM.</p>
 
 <h5 id="360dialog"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">III. 360 Dialog</h5>
 
 <h5 id="mongodb"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">IV. MongoDB</h5>
 
 <p style="margin-left:2rem">MongoDB es una base de datos orientada a documentos. Esto quiere decir que en lugar de guardar los datos en registros, guarda los datos en documentos. Estos documentos son almacenados en BSON, que es una representación binaria de JSON. Una de las diferencias más importantes con respecto a las bases de datos relacionales, es que no es necesario seguir un esquema. Los documentos de una misma colección - concepto similar a una tabla de una base de datos relacional, con la diferencia que pueden tener esquemas diferentes.</p>
@@ -534,6 +553,7 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
     </ol>
 </ol>
 <h5 id="nodejs"></h5>
+        
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">V. NodeJS Backend (API)</h5>
 
 <p style="margin-left:2rem">Node.js es un entorno de ejecución de JavaScript que permite el desarrollo de aplicaciones JavaScript en el lado del servidor. Este entorno de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript.</p>
@@ -690,7 +710,9 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
     </ul>
 </ol>
 <h5 id="reactjs"></h5>
+        
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">VI. ReactJS Frontend (Métricas)</h5>
+
 <p style="margin-left:2rem">El componente Frontend del proyecto permite el levantamiento de una plataforma web para la visualización de métricas estadísticas básicas acerca de la usabilidad del Chatbot por los usuarios, identificar de mejor manera la población que hace uso de la herramienta, qué categorías son las más visitadas, entre otras. Así como el registro de los mensajes que no son comprendidos por el bot mes a mes.</p>
 <p style="margin-left:2rem">A continuación, se muestran los pasos para poder descargar, ejecutar y compilar el proyecto:</p>
 <ol style="margin-left:2rem" type="a">
@@ -736,8 +758,10 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
 </ul>
 </ol>
 <h5 id="ibmcloudfonundry"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">VII. ReactJS Frontend (Métricas)</h5>
-<p style="margin-left:2rem">IBM Cloud Foundry es un servicio perteneciente a IBM Cloud, que permite crear instancias de varias plataformas de Cloud Foundry aisladas y con recursos a petición. Instancias de la ejecución de servicio de IBM Cloud Foundry Enterprise en su cuenta de IBM Cloud. El entorno se despliega en hardware aislado (clústeres de Kubernetes). Tiene un control completo sobre el entorno, que incluye el control de accesos, la capacidad, las actualizaciones de versiones, el uso de recursos y la supervisión. Además, la integración de Cloud Foundry en IBM Cloud permite a los desarrolladores aprovechar los servicios disponibles en su cuenta de IBM Cloud.</p>
+
+    <p style="margin-left:2rem">IBM Cloud Foundry es un servicio perteneciente a IBM Cloud, que permite crear instancias de varias plataformas de Cloud Foundry aisladas y con recursos a petición. Instancias de la ejecución de servicio de IBM Cloud Foundry Enterprise en su cuenta de IBM Cloud. El entorno se despliega en hardware aislado (clústeres de Kubernetes). Tiene un control completo sobre el entorno, que incluye el control de accesos, la capacidad, las actualizaciones de versiones, el uso de recursos y la supervisión. Además, la integración de Cloud Foundry en IBM Cloud permite a los desarrolladores aprovechar los servicios disponibles en su cuenta de IBM Cloud.</p>
 <p style="margin-left:2rem">Para poder usar el servicio de IBM® Cloud Foundry se necesita instalar CLI siguiendo las instrucciones que se encuentra en:</p>
 <p style="margin-left:2rem" >
 <a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">https://docs.cloudfoundry.org/cf-cli/install-go-cli.html</a></p>
@@ -778,12 +802,15 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
 <p style="margin-left:2rem"><i>cf logs chatbot_ecci</i></p>
 
 <h4 id="balance"></h4>
+    
 #### 5. Balance de Operación Chatbot
 
 <p style="margin-left:2rem">La herramienta Chatbot se entrega en un estado completamente operativo, con los contenidos actualizados según disposición del territorio, con las cuentas activas y en regla para cada uno de los requerimientos del sistema.</p>
 <p style="margin-left:2rem">De la misma forma están funcionando todos los componentes de la arquitectura a cabalidad, generando una solución interactiva, intuitiva y de fácil uso a través de Whatsapp. Y con componentes de análisis de usabilidad, registro de respuestas y visualización de las mismas mediante una plataforma web accesible desde internet en cualquier momento.</p>
 <h5 id="reactjs"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">I. Posibles Dificultades</h5>
+    
 <ol style="margin-left:2rem" type="a">
     <b><li>Curva de Aprendizaje de Tecnologías</li></b>
     <p>Las principales dificultades presentadas en la administración y mantenimiento del proyecto pueden deberse especialmente a la curva de aprendizaje de las tecnologías empleadas en el mismo.</p>
@@ -796,7 +823,9 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
     <p>Por último, en un caso extremo de eliminación de uno de los recursos de Watson Assistant u Object Storage, se deben recrear los servicios, y subir tanto los archivos estáticos de los recursos e imágenes, como el diálogo del Chatbot a Watson Assistant. Si el servicio eliminado es el de Object Storage, posiblemente se deban actualizar las urls de las imágenes en el flujo del Bot debido a que se re-subieron a un servicio nuevo.</p>
 </ol>
 <h5 id="recomendaciones"></h5>
+    
 ##### <h5 style="font-size: 18.2px; margin-left:1.2rem">II. Recomendaciones</h5>
+    
 <p style="margin-left:2rem">A continuación, se mencionan algunas recomendaciones a tener en cuenta para la administración, mantenimiento y extensibilidad del proyecto.</p>
 <p style="margin-left:2rem">En primer lugar, es importante recordar que el proyecto está pensado en un principio para generar costos mínimos en cuanto al sostenimiento del sistema, para ello, se hace uso de ciertos planes gratuitos que ofrecen algunas plataformas, para aprovechar los recursos limitados disponibles en estos planes de uso y generar un producto final económico, sustentable y extensible en sus primeras etapas de lanzamiento, según las necesidades del territorio.</p>
 <p style="margin-left:2rem">Debido a esto, es posible que, a futuro, según el crecimiento y acogida de la plataforma en el territorio, pueden verse excedidos los límites de uso de los planes gratuitos, en cuyo caso debe evaluarse el ampliamiento de recursos de las plataformas, posiblemente en un plan de pago, que aunque genera un cobro, sigue siendo mínimo y bajo demanda, según el uso que se le dé al servicio del Chatbot.</p>
