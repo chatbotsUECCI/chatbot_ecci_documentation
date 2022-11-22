@@ -43,7 +43,7 @@
             <li><a href="#EstructuraArchivos">Estructura de Archivos del Proyecto</a></li>
             <li><a href="#ServiciosAPI">Servicios API Rest</a></li>
         </ol>
-        <li><a href="reactjs">ReactJS Frontend (Métricas)</a></li>
+        <li><a href="#reactjs">ReactJS Frontend (Métricas)</a></li>
         <ol type="a">
             <li><a href="#clonandorepositoriofront">Clonando el Repositorio</a></li>
             <li><a href="#instalandodependeciasfront">Instalando Dependencias</a></li>
@@ -977,10 +977,10 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
     src="./Img/PaginaPrincipalFront.png" alt="Página Principal Frontend" align="center" width="700px">
     <p id="imagen61" style="text-align:center;font-size:0.8rem"><i>Imagen 61 Página Principal Frontend.</i></p>
 </div>
-<b><li id="estructuraarchivosfront">Compilando el Proyecto para Producción</li></b>
+<b><li id="compilandoproyectofront">Compilando el Proyecto para Producción</li></b>
 <i><p>yarn run build</p></i>
 <p><b>Nota: </b>ste comando crea un nuevo directorio llamado "build" que es usado por el Backend para ser desplegado en las rutas correspondientes.</p>
-<b><li>Estructura de Archivos del Proyecto</li></b>
+<b><li id="estructuraarchivosfront">Estructura de Archivos del Proyecto</li></b>
 <div>
     <p style="text-align:center"><image
     src="./Img/EstructuraArchivosFrontend.png" alt="Estructura de Archivos Frontend" align="center" width="200px">
