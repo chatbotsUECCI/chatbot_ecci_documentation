@@ -1,6 +1,4 @@
-# <h1 style="font-family:'Open Sans', sans-serif">Documentación Técnica Chatbot Universidad ECCI</h1>
-
-<h3 id=indice></h3>
+# Documentación Técnica Chatbot Universidad ECCI
 
 #### Índice
 
