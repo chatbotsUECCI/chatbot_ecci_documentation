@@ -20,12 +20,10 @@ cualquier lugar donde la necesite.</p>
 src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
 <p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p>
 
-<ol>
-    <li>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</li>
-    <li>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</li>
-    <li>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</li>
-    <li>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</li>
-</ol>
+<p>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</p>
+<p>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</p>
+<p>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</p>
+<p>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</p>
 
 <h5 id="crearasistente"></h5>
 
@@ -374,7 +372,6 @@ src="/chatbot_ecci_documentation/Img/ListaColeccionesMongo.png" alt="Lista de Co
 <p id="imagen45" style="text-align:center;font-size:0.8rem"><i>Imagen 45 Lista de Colecciones en MongoDB</i></p>
     
 <p>A continuación, se detallan las distintas colecciones disponibles en el proyecto chatbot:</p>
-
 
 <p><b>agents:</b> Almacena la información de los agentes.</p>
 <p><b>campus:</b> Guarda las consultas realizadas por sede.</p>
