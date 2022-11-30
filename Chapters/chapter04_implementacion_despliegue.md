@@ -16,55 +16,53 @@ cualquier lugar donde la necesite.</p>
 
 #### A. Funcionamiento
 
-<><p style="text-align:center">
-<image src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
-<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p></>
-    
+<p style="text-align:center"><image
+src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
+<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p>
+
 <ol>
     <li>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</li>
     <li>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</li>
     <li>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</li>
     <li>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</li>
+</ol>
 
 <h5 id="crearasistente"></h5>
 
 #### B. Crear un Asistente Watson Assistant
 
-
 <p>El servicio se crea desde la consola de IBM Cloud buscando el servicio en el catálogo, el plan Lite permite un uso gratuito con algunas limitaciones en el servicio, al crear el servicio se debe crear un skill el cual contendrá los componentes de Intenciones, Entidades y Diálogo.</p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/Catalogo.png" alt="Cátalogo de IBM - Watson Assistant" align="center" width="700px">
-<p id="imagen3" style="text-align:center;font-size:0.8rem"><i>Imagen 3 Cátalogo de IBM - Watson Assistant</i></p></>
+<p id="imagen3" style="text-align:center;font-size:0.8rem"><i>Imagen 3 Cátalogo de IBM - Watson Assistant</i></p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearServicioWatson.png" alt="Crear Servicio de Watson Assistant" align="center" width="700px">
-<p id="imagen4" style="text-align:center;font-size:0.8rem"><i>Imagen 4 Crear Servicio de Watson Assistant</i></p></>
+<p id="imagen4" style="text-align:center;font-size:0.8rem"><i>Imagen 4 Crear Servicio de Watson Assistant</i></p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/PaginaPrincipalWatson.png" alt="Página Principal de Watson Assistant" align="center" width="700px">
-<p id="imagen5" style="text-align:center;font-size:0.8rem"><i>Imagen 5 Página Principal de Watson Assistant</i></p></>
+<p id="imagen5" style="text-align:center;font-size:0.8rem"><i>Imagen 5 Página Principal de Watson Assistant</i></p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearAsistenteWatson.png" alt="Crear Asistente en Watson Assistant" align="center" width="700px">
-<p id="imagen6" style="text-align:center;font-size:0.8rem"><i>Imagen 6 Crear Asistente en Watson Assistant</i></p></>
+<p id="imagen6" style="text-align:center;font-size:0.8rem"><i>Imagen 6 Crear Asistente en Watson Assistant</i></p>
 
 <p>Se puede crear el Dialog Skill con base a un ejemplo que se ofrece o subir un archivo .json con un Dialog Skill ya configurado.</p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearDialogo.png" alt="Crear Dialogo en Watson Assistant" align="center" width="700px">
-<p id="imagen7" style="text-align:center;font-size:0.8rem"><i>Imagen 7 Crear Dialogo en Watson Assistant</i></p></>
+<p id="imagen7" style="text-align:center;font-size:0.8rem"><i>Imagen 7 Crear Dialogo en Watson Assistant</i></p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/PaginaAsistenteChatbot.png" alt="Página Principal Asistente Chatbot ECCI" align="center" width="700px">
-<p id="imagen8" style="text-align:center;font-size:0.8rem"><i>Imagen 8 Página Principal Asistente Chatbot ECCI</i></p></>
-    
-<>
+<p id="imagen8" style="text-align:center;font-size:0.8rem"><i>Imagen 8 Página Principal Asistente Chatbot ECCI</i></p>
+
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/AsistenteUECCIWatson.png" alt="Asistente UECCI en Watson Assistant" align="center" width="700px">
 <p id="imagen9" style="text-align:center;font-size:0.8rem"><i>Imagen 9 Asistente UECCI en Watson Assistant</i></p>
-</>
-    
+
 <h5 id="intenciones"></h5>
 
 #### C. Intenciones
@@ -79,13 +77,13 @@ src="/chatbot_ecci_documentation/Img/AsistenteUECCIWatson.png" alt="Asistente UE
 
 <p>Primero, necesitamos definir una intención para agregar una tarea, agregando una serie de ejemplos de cómo las personas podrían agregar una tarea.</p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/Intenciones.png" alt="Intenciones Chat UECCI" align="center" width="700px">
-<p id="imagen10" style="text-align:center;font-size:0.8rem"><i>Imagen 10 Intenciones Chat UECCI</i></p></>
+<p id="imagen10" style="text-align:center;font-size:0.8rem"><i>Imagen 10 Intenciones Chat UECCI</i></p>
 
-<><p style="text-align:center"><image
+<p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/EjemploIntencion.png" alt="Ejemplo de Intención: Aspirante" align="center" width="700px">
-<p id="imagen11" style="text-align:center;font-size:0.8rem"><i>Imagen 11 Ejemplo de Intención: Aspirante</i></p></>
+<p id="imagen11" style="text-align:center;font-size:0.8rem"><i>Imagen 11 Ejemplo de Intención: Aspirante</i></p>
 
 <h5 id="entidades"></h5>
 
@@ -377,33 +375,33 @@ src="/chatbot_ecci_documentation/Img/ListaColeccionesMongo.png" alt="Lista de Co
     
 <p>A continuación, se detallan las distintas colecciones disponibles en el proyecto chatbot:</p>
 
-<ul type="disc">
-    <li><b>agents:</b> Almacena la información de los agentes.</li>
-    <li><b>campus:</b> Guarda las consultas realizadas por sede.</li>
-    <li><b>candidates:</b> Almacena la información de los aspirantes.</li>
-    <li><b>categories:</b> Registra las consultas de los usuarios cuando acceden a una categoría específica del menú principa</li>
-    <li><b>chatsbyacademicprogram:</b> Guarda las consultas por programa académico.</li>
-    <li><b>chatsbyagent:</b> Guarda los chats atendidos por cada agente.</li>
-    <li><b>chatsbybot:</b> Guarda los chats atendidos exclusivamente por el bot.</li>
-    <li><b>competences:</b> Guarda el nombre de los programas académicos que se encuentran en la universidad.</li>
-    <li><b>login:</b> Guarda los datos de usuario y contraseña de acceso para interfaz web.</li>
-    <li><b>messages:</b> Registra la interacción de mensajes de los usuarios con el bot.</li>
-    <li><b>messagesagents:</b> Registra la interacción de mensajes de los usuarios con agentes.</li>
-    <li><b>othermessages:</b> Almacena los mensajes que el bot no comprendió.</li>
-    <li><b>requestsbysection:</b> Registra las consultas realizadas por sección dentro de cada categoría del menú principal.</li>
-    <li><b>sandbox_dialog: </b> Almacena los registros de números de Whatsapp y API Keys de conexión al sandbox de 360 Dialog para cada número.</li>
-    <li><b>satisfaction:</b> Registra las respuestas de satisfacción de los usuarios.</li>
-    <li><b>sede:</b> Guarda el registro de consultas de cada número a una sede específica en el chatbot.</li>
-    <li><b>senttemplates</b> Almacena el registro de mensajes plantilla enviados en campañas masivas y el estado de los mismos.</li>
-    <li><b>servicequalification:</b> Registra las respuestas de calificación del servicio por parte de los usuarios.</li>
-    <li><b>sessions:</b> Guarda las sesiones activas de los usuarios de Watson Assistant y el tiempo que llevan en sesión.</li>
-    <li><b>sessionsagents:</b> Guarda las sesiones activas de los agentes con los usuarios.</li>
-    <li><b>tags:</b> Almacena las etiquetas de aspirante nuevo u homologado.</li>
-    <li><b>templatesmessages:</b> Almacena los mensajes plantillas aprobados disponibles para envío masivo desde la interfaz web.</li>
-    <li><b>tickets:</b> Guarda el registro de tickets creados en el chatbot.</li>
-    <li><b>unassignedTickets:</b> Guarda el registro de tickets no asignados a agentes debido a la no disponibilidad de agentes para el programa consultado al momento de la consulta.</li>
-    <li><b>users:</b> Guarda la información de los usuarios.</li>
-</ul>
+
+<p><b>agents:</b> Almacena la información de los agentes.</p>
+<p><b>campus:</b> Guarda las consultas realizadas por sede.</p>
+<p><b>candidates:</b> Almacena la información de los aspirantes.</p>
+<p><b>categories:</b> Registra las consultas de los usuarios cuando acceden a una categoría específica del menú principa</p>
+<p><b>chatsbyacademicprogram:</b> Guarda las consultas por programa académico.</p>
+<p><b>chatsbyagent:</b> Guarda los chats atendidos por cada agente.</p>
+<p><b>chatsbybot:</b> Guarda los chats atendidos exclusivamente por el bot.</p>
+<p><b>competences:</b> Guarda el nombre de los programas académicos que se encuentran en la universidad.</p>
+<p><b>login:</b> Guarda los datos de usuario y contraseña de acceso para interfaz web.</p>
+<p><b>messages:</b> Registra la interacción de mensajes de los usuarios con el bot.</p>
+<p><b>messagesagents:</b> Registra la interacción de mensajes de los usuarios con agentes.</p>
+<p><b>othermessages:</b> Almacena los mensajes que el bot no comprendió.</p>
+<p><b>requestsbysection:</b> Registra las consultas realizadas por sección dentro de cada categoría del menú principal.</p>
+<p><b>sandbox_dialog: </b> Almacena los registros de números de Whatsapp y API Keys de conexión al sandbox de 360 Dialog para cada número.</p>
+<p><b>satisfaction:</b> Registra las respuestas de satisfacción de los usuarios.</p>
+<p><b>sede:</b> Guarda el registro de consultas de cada número a una sede específica en el chatbot.</p>
+<p><b>senttemplates</b> Almacena el registro de mensajes plantilla enviados en campañas masivas y el estado de los mismos.</p>
+<p><b>servicequalification:</b> Registra las respuestas de calificación del servicio por parte de los usuarios.</p>
+<p><b>sessions:</b> Guarda las sesiones activas de los usuarios de Watson Assistant y el tiempo que llevan en sesión.</p>
+<p><b>sessionsagents:</b> Guarda las sesiones activas de los agentes con los usuarios.</p>
+<p><b>tags:</b> Almacena las etiquetas de aspirante nuevo u homologado.</p>
+<p><b>templatesmessages:</b> Almacena los mensajes plantillas aprobados disponibles para envío masivo desde la interfaz web.</p>
+<p><b>tickets:</b> Guarda el registro de tickets creados en el chatbot.</p>
+<p><b>unassignedTickets:</b> Guarda el registro de tickets no asignados a agentes debido a la no disponibilidad de agentes para el programa consultado al momento de la consulta.</p>
+<p><b>users:</b> Guarda la información de los usuarios.</p>
+
 
 <h4 id="conectividad"></h4>
 
