@@ -1,3 +1,14 @@
-title: Documentación Técnica Chatbot UECCI
-description:
+title: Documentación Técnica Chatbot Universidad ECCI
+description: En la presente página se encuentra la documentación del Chatbot de la Universidad ECCI.
+
+links: 
+  - label: "GitHub"
+    url: "https://github.com/Kralizek"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/renatogolia/"
+  - label: "Twitter"
+    url: "https://twitter.com/Kralizek"
+  - label: "Stack Overflow"
+    url: "https://stackoverflow.com/users/82540"
+
 theme: jekyll-theme-minimal
