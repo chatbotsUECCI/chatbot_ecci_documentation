@@ -9,10 +9,6 @@ body {
   font-weight:400;
 }
 
-.links li ol{
-  display:"none";
-}
-
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
@@ -134,15 +130,12 @@ strong {
   font-weight:700;
 }
 
-.downloads li + li + li {
-  border-right:none;
-  width:89px;
+.links li ol {
+    display: none;
 }
 
-.downloads a strong {
-  font-size:14px;
-  display:block;
-  color:#222;
+.links li:hover>ol {
+    display: block;
 }
 
 section {
