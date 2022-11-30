@@ -373,24 +373,22 @@ src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a Mo
 <h4 id="buscardatos"><b>C. Búscar, Insertar, Actualizar y Eliminar Registros</b></h4>
 
 <ul type="disc">
-    <li>Buscar Datos</li>
+    <li>Buscar Datos</li><br>
     <p>Para buscar documentos en nuestra base de datos, utilizaremos el comando find. La sintaxis es la que se muestra a continuación, el primer parámetro es el nombre de la colección y el último se refiere a los atributos a buscar en ella en formato JSON.</p>
     <i><p>dbmongo.collection("collection").find({ key: "value" })</p></i>
-    <li>Insertar Datos</li>
+    <li>Insertar Datos</li><br>
     <p>Insertar documentos es muy sencillo. Como parámetro recibe el objeto JSON que se quiere insertar con la función insertOne o insertMany, junto con una función callback que se ejecuta cuando finaliza la inserción.</p>
-    <pre>
-        dbmongo.collection("collection").insertOne({ key: “value” }, function (err, r) {
-            if (err) {
-                res.send({ success: false });
-            } else {
-                console.log("record created")
-            }
-        });
-    </pre>
-    <li>Eliminación de Datos</li>
+    <i>dbmongo.collection("collection").insertOne({ key: “value” }, function (err, r) {
+            <p style="margin-left:1rem">if (err) {</p>
+            <p style="margin-left:2rem">res.send({ success: false });</p>
+            <p style="margin-left:1rem">} else {</p>
+            <p style="margin-left:2rem">console.log("record created")</p>
+            <p style="margin-left:1rem">}</p>
+            <p>});</p></i>
+    <li>Eliminación de Datos</li><br>
     <p>Para eliminar datos de una colección, se utiliza el comando deleteOne, recibe como parámetro la consulta para filtrar los registros de la colección y elimina la primera coincidencia. También es posible usar el comando deleteMany, si no especificamos ninguna consulta, se eliminarán todos los datos de la colección.</p>
     <i><p>dbmongo.collection("collection").deleteOne({ key: “value” })</p></i>
-    <li>Actualización de Datos</li>
+    <li>Actualización de Datos</li><br>
     <p>Para actualizar datos, se usa el comando findOneAndUpdate. Este comando, recibe tres parámetros: el primero con la consulta para filtrar los documentos a modificar, el segundo con los elementos que se modificarán, y el tercero opcionalmente permite definir el comportamiento de retorno de la consulta, en el ejemplo permite definir que el elemento retornado sea el documento con los datos actualizados recientemente</p>
     <i><p>dbmongo.collection("collection").findOneAndUpdate({ "chat_id": from }, {</p>
     <p style="margin-left:1rem">$set: { "status": context?.status }</p>
