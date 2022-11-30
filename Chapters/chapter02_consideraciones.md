@@ -21,14 +21,14 @@ Artificial de IBM, para facilitar el desarrollo de servicios a través de esta h
 
 <p>Esta plataforma se usa para la construcción del componente conversacional del proyecto, así como para disponer de un servicio de almacenamiento para los recursos estáticos de la herramienta, por último, se utiliza un servicio de IBM Cloud para el despliegue de los componentes Backend y Frontend del proyecto.</p> 
 
-> https://www.ibm.com/es-es/cloud
+<a href="https://www.ibm.com/es-es/cloud">https://www.ibm.com/es-es/cloud</a>
 
-#### b. Bussines Facebook Manager:</b> Es la plataforma de administración comercial de Facebook.
+#### b. Bussines Facebook Manager: Es la plataforma de administración comercial de Facebook.
 
 <p>Permite la configuración, creación, administración y verificación de múltiples servicios brindados por Facebook para empresas y organizaciones comerciales. Para la
 integración del proyecto con la plataforma de Whatsapp, es necesario pasar por el proceso de creación y verificación de un negocio en esta plataforma, para esto se debe disponer en lo posible de los documentos legales que validan la identidad del negocio u organización a registrar con Facebook.</p>
 
-> https://business.facebook.com/
+<a href="https://business.facebook.com/">https://business.facebook.com/</a>
 
 #### c. 360 Dialog: </b> Es el proveedor de servicios de mensajería para Whatsapp
 
@@ -41,13 +41,13 @@ se orientan a brindar servicios de comunicaciones de calidad para otras empresas
 <p>Este es el caso de 360 Dialog, un proveedor de múltiples servicios de comunicación, entre ellos, la conectividad con Whatsapp para mensajería instantánea. Existen múltiples proveedores con diversos modelos de negocio, 360 Dialog es uno de los más flexibles en
 cuanto al servicio que ofrece.</p>
 
-> https://www.360dialog.com
+<a href="https://www.360dialog.com">https://www.360dialog.com</a>
 
-<p><b>d. MongoDB Cloud: </b> MongoDB Cloud es un servicio de almacenamiento en la nube para bases de datos no relacionales MongoDB.</p>
+#### d. MongoDB Cloud: MongoDB Cloud es un servicio de almacenamiento en la nube para bases de datos no relacionales MongoDB.
 
 <p>MongoDB es un gestor de bases de datos no relacionales (Nosql) que ofrece velocidad, dinamismo, fácil integración, y más. Puede ser implementado en múltiples formas, para efectos de este proyecto se hace uso de la plataforma Cloud de MongoDB para levantar y desplegar de manera fácil y sencilla las bases de datos del proyecto en un entorno Cloud.</p>
 
-> https://www.mongodb.com/cloud
+<a href="https://www.mongodb.com/cloud">https://www.mongodb.com/cloud</a>
 
 <h5 id="validacionCuentas"></h5>
 
@@ -67,6 +67,6 @@ Facebook para poder usar Whatsapp a través de 360 Dialog, que se debe realizar 
 perfil de Facebook Business verificado correctamente, desde el siguiente enlace:</p>
 
 
-> https://www.360dialog.com/es/whatsapp-business-api
+<a href="https://www.360dialog.com/es/whatsapp-business-api">https://www.360dialog.com/es/whatsapp-business-api</a>
 
 <p>Por último, dependiendo del método con el que se realice la habilitación del número telefónico para la creación de la cuenta de Whatsapp, debe realizarse una verificación de identidad similar a la solicitada por Facebook Business. Esto es, en el caso de optar por la compra de un número telefónico desde el catálogo de números disponibles en la consola de 360 Dialog, debe realizarse este proceso adicional de verificación con 360 Dialog.</p>
