@@ -99,7 +99,7 @@ src="/chatbot_ecci_documentation/Img/Dialogo.png" alt="Diálogo Chat UECCI" alig
 src="/chatbot_ecci_documentation/Img/Nodo.png" alt="Nodo Menú en Diálogo Chat UECCI" align="center" width="700px">
 <p id="imagen14" style="text-align:center;font-size:0.8rem"><i>Imagen 14 Nodo Menú en Diálogo Chat UECCI</i></p>
 
-<p style="margin-left: 3rem"><b>Nota: </b>Mensaje no comprendido (anything else) Este nodo se implementó como un respaldo si Watson Assistant no comprende el mensaje, y se le solicita al usuario que repita la pregunta de otra manera.</p>
+<p><b>Nota: </b>Mensaje no comprendido (anything else) Este nodo se implementó como un respaldo si Watson Assistant no comprende el mensaje, y se le solicita al usuario que repita la pregunta de otra manera.</p>
 
 <h3 id="IBMObject"><b>II. IBM Object Storage</b></h3>
 
@@ -142,7 +142,7 @@ src="/chatbot_ecci_documentation/Img/ListadoArchivosObject.png" alt="Listado de 
 src="/chatbot_ecci_documentation/Img/PoliticasAcceso.png" alt="Políticas de Acceso en Cloud Object Storage" align="center" width="700px">
 <p id="imagen19" style="text-align:center;font-size:0.8rem"><i>Imagen 19 Políticas de Acceso en Cloud Object Storage</i></p>
 
-<p style="margin-left:2rem">Por último, los archivos subidos al bucket podrán visualizarse de la siguiente forma:</p>
+<p>Por último, los archivos subidos al bucket podrán visualizarse de la siguiente forma:</p>
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" align="center" width="700px">
@@ -396,7 +396,7 @@ src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a Mo
     </i>
 </ul>
 
-<h3 id="nodejs">V. NodeJS Backend (API)</h3>
+<h3 id="nodejs">VII. NodeJS Backend (API)</h3>
 
 <p>Node.js es un entorno de ejecución de JavaScript que permite el desarrollo de aplicaciones JavaScript en el lado del servidor. Este entorno de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript.</p>
 
@@ -406,3 +406,242 @@ src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a Mo
 
 <p>A continuación, se muestran los pasos para poder descargar, ejecutar y compilar el proyecto:</p>
 
+<h4 id="clonandorepositorio"><b>A. Clonando el Repositorio</b></h4>
+
+<p><i>git clone git@github.com:chatbotsONU-UECCI/chatbot_ECCI.git</i></p>
+
+<h4 id="instalandodependencias"><b>B. Instalando Dependencias</b></h4>
+
+<p><i>cd chatbotECCI/</i>></p>
+
+<p><i>yarn install</i></p>
+
+<h4 id="ejecutarproyecto"><b>C. Ejecutar el Proyecto en Desarrollo</b></h4>
+
+<p><i>yarn start</i></p>
+
+<p><b>Nota: </b>Este comando crea un servidor de desarrollo que estará escuchando peticiones y ejecutando acciones según las peticiones recibidas. Este servidor se ejecuta por defecto en http://localhost/3000</p>
+
+<h4 id="subiendoproyecto"><b>D. Subiendo el Proyecto a Producción</b></h4>
+
+<p><i>ibmcloud cf push</i></p>
+
+<p><b>Nota: </b>El backend del proyecto no necesita ser compilado antes de ser subido al servicio de Cloud Foundry, sin embargo, el Frontend si debe ser compilado en la ruta chatbotECCI/front/build/ para poder ser direccionado por el backend, quien se encarga de habilitar las rutas disponibles de la plataforma web.</p>
+
+<p>Este comando sólo puede ser ejecutado después de registrarse en la interfaz de línea de comandos de ibm cloud. En las siguientes secciones se detalla más acerca del servicio de cloud foundry y la instalación del CLI de ibm cloud.</p>
+
+<h4 id="EstructuraArchivos"><b>E. Estructura de Archivos del Proyecto</b></h4>
+
+
+<p style="text-align:center"><image
+src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura de Archivos Backend" align="center" width="200px">
+<p id="imagen47" style="text-align:center;font-size:0.8rem"><i>Imagen 47 Estructura de Archivos Backend</i></p>
+
+<p>En la imagen 34 se puede apreciar la estructura de archivos para el componente Backend, la cual se compone principalmente de:</p>
+
+<ul type="square">
+    <li><b>bubble_chat/</b> Directorio del componente frontend del proyecto.</li>
+    <li><b>documentation/</b> Directorio donde se encuentra la documentación técnica del proyecto.</li>
+    <li><b>front/</b> Directorio del componente frontend del proyecto.</li>
+    <li><b>kubernets/</b> Contiene el archivo .yaml de despliegue del proyecto, viene del proyecto plantilla de ibm, no es necesario modificarlo.</li>
+    <li><b>node_modules/</b> Directorio donde se almacenan las librerías y dependencias de nodeJS necesarias para la ejecución del proyecto.</li>
+    <li><b>views/</b> Carpeta para vistas, debido a que esta parte del proyecto es un backend puro, no es necesario modificarla.</li>
+    <li><b>Dockerfile</b> Archivo Dockerfile que define la creación del contenedor que se desplegará en Cloud Foundry.</li>
+    <li><b>manifest.yml</b> Archivo .yml que define las configuraciones de despliegue del servicio de Cloud Foundry en la nube de IBM.</li>
+    <li><b>package.json</b> Define las características del proyecto nodeJS, como sus dependencias y versiones utilizadas.</li>
+    <li><b>server.js</b> Archivo principal del proyecto, en él se encuentra el código fuente del backend para ser desplegado.</li>
+</ul><br>
+
+<p><b>Nota: </b>El resto de documentos no mencionados anteriormente no hacen parte del core del proyecto, sino que vienen desde la plantilla de IBM Cloud para aplicaciones node en Cloud Foundry, y no es necesario modificarlos.</p>
+
+<h4 id="ServiciosAPI"><b>F. Servicios API Rest</b></h4>
+
+<p>Dentro del backend actualmente se tienen implementados los siguientes servicios API Rest:</p>
+
+<ul type="square">
+    <li>Servicio recepción mensajes 360 Dialog. “/inbound”</li><br>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/ServicioConexionWhatsapp.png" alt="Servicio de Conexión Whatsapp" align="center" width="700px">
+    <p id="imagen48" style="text-align:center;font-size:0.8rem"><i>Imagen 48 Servicio de Conexión Whatsapp</i></p>
+    <p>Este servicio es llamado por 360 Dialog al momento de recibir un mensaje por parte de un usuario. La información obtenida es el número del usuario, a que número va dirigido y el cuerpo del mensaje de tipo texto.</p>
+    <p>Al recibir un mensaje se verifica dentro de la base de datos que exista una sesión vigente del número del usuario si no existe una sesión se le envía a Watson Assistant con la utilización de la siguiente función del API de Watson Assistant:</p>
+    <i><p>assistant.createSession({ </p>
+    <p style="margin-left:1.5rem">assistantId: 'xxxx-xxx-xxx-xxx'</p>
+    <p>}).then(res => {</p>
+    <p style="margin-left:1.5rem">console.log(JSON.stringify(res, null, 2)); </p>
+    <p>}).catch(err => {</p>
+    <p style="margin-left:1.5rem">console.log(err);</p>
+    <p>});</p>
+    </i>
+    <p>La cual responde con un número de sesión que se almacenará en la colección “sessions” de la base de datos MongoDB para manejar las sesiones de los usuarios.</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/GuardarSesionConversacion.png" alt="Guardar Sesión de Conversación" align="center" width="700px">
+    <p id="imagen49" style="text-align:center;font-size:0.8rem"><i>Imagen 49 Guardar Sesión de Conversación</i></p>
+    <p>Cuando ya existe una sesión del usuario con Watson Assistant envía el mensaje recibido de 360 Dialog a Watson Assistant con la siguiente función:</p>
+    <i>
+    <p>assistant.message({ </p>
+    <p style="margin-left:1.5rem">assistantId: '{assistant_id}',</p>
+    <p style="margin-left:1.5rem">sessionId: '{session_id}',</p>
+    <p style="margin-left:1.5rem">input: {</p>
+    <p style="margin-left:3rem">message_type': 'text',</p>
+    <p style="margin-left: 3rem">'text': 'Hello'</p>
+    <p style="margin-left:1.5rem">}</p>
+    <p>}).then(res => {</p>
+    <p style="margin-left:1.5rem">console.log(JSON.stringify(res.result, null, 2)); </p>
+    <p>}).catch(err => { </p>
+    <p style="margin-left: 1.5rem">console.log(err);</p>
+    <p>});</p></i>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/EnvioMensajes360Dialog.png" alt="Envío de Mensajes a 360 Dialog" align="center" width="700px">
+    <p id="imagen50" style="text-align:center;font-size:0.8rem"><i>Imagen 50 Envío de Mensajes a 360 Dialog</i></p>
+    <p>Dentro del servicio API Rest “/inbound” se valida a qué pregunta está respondiendo el usuario, o si se encuentra dentro de alguna categoría del menú dependiendo del contexto de la conversación y la sección que se encuentra en la colección “sessions”.</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/DireccionamientoConversacion.png" alt="Direccionamiento de Conversación Según la Sección" align="center" width="700px">
+    <p id="imagen51" style="text-align:center;font-size:0.8rem"><i>Imagen 51 Direccionamiento de Conversación Según la Sección.</i></p>
+    <p>Además, se valida si el usuario accede a una conversación con un agente, se consultan los agentes disponibles y se establece la conexión con el primer agente disponible encontrado, al cual el bot le notifica y le pregunta si desea o no atender al usuario. Si acepta se actualizarán los datos de las sesiones y el agente podrá escribirle al usuario para atender su consulta, si no, el bot buscará otro agente disponible y liberará al agente que rechazó atender al usuario. El detalle de este comportamiento se encuentra dentro de la función “connectToAgent” mostrada en la Imagen 39.</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/ConectarAgente.png" alt="Conectar con Agente" align="center" width="700px">
+    <p id="imagen52" style="text-align:center;font-size:0.8rem"><i>Imagen 52 Conectar con Agente.</i></p>
+    <p>Si el bot no comprende el mensaje, el api no devolverá ninguna intención o entidad, en este caso se guardará en la base de datos en la colección “othersmessages” el mensaje del usuario.</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/GuardarMensajesNoComprendidos.png" alt="Guardar Mensajes no Comprendidos" align="center" width="700px">
+    <p id="imagen53" style="text-align:center;font-size:0.8rem"><i>Imagen 53 Guardar Mensajes no Comprendidos.</i></p>
+    <p>Cuando un usuario que ya tiene una sesión creada interactúa nuevamente con el bot se actualiza la fecha para mantener la sesión activa.</p>
+    <li>Servicio para la Recepción de Mensajes Whatsapp desde 360 Dialog.</li><br>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/ServicioConexionWhatsappy360.png" alt="Servicio de Conexión de Whatsapp con 360 Dialog" align="center" width="700px">
+    <p id="imagen54" style="text-align:center;font-size:0.8rem"><i>Imagen 54 Servicio de Conexión de Whatsapp con 360 Dialog</i></p>
+    <p>Este servicio escucha las peticiones realizadas desde el API de Whatsapp cuando un bot configurado con la url del endpoint recibe un mensaje, gestiona la comunicación del chatbot a través de la plataforma de Whatsapp desde la API de 360 Dialog.</p>
+    <P>Este endpoint gestiona toda la lógica de recepción de mensajes y pre procesado de multimedia para enviar el mensaje recibido desde 360 Dialog al flujo de conversación de watson assistant.</P>
+    <li>Servicio para la Recepción de Mensajes Whatsapp Sandbox desde 360 Dialog</li><br>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/RecepcionMensajesWhatsapp.png" alt="Recepción de Mensajes de Whatsapp desde 360 Dialog" align="center" width="700px">
+        <p id="imagen55" style="text-align:center;font-size:0.8rem"><i>Imagen 55 Recepción de Mensajes de Whatsapp desde 360 Dialog</i></p>
+    <p>Este servicio escucha las peticiones realizadas desde el API de Whatsapp para el número sandbox de 360 Dialog, gestiona la comunicación del chatbot a través de la plataforma de Whatsapp desde la API de 360 Dialog. Es necesario verificar un token individual para cada usuario del sandbox habilitado.</p>
+    <p>Este endpoint gestiona toda la lógica de recepción de mensajes y preprocesado de multimedia para enviar el mensaje recibido desde el sandbox de 360 Dialog al flujo de conversación de watson assistant.</p>
+    <li>Servicios para la Configuración y Consulta del Webhook del Sandbox de 360 Dialog</li><br>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/Weebhook360Dialog.png" alt="Servicio de conexión Whatsapp Sandbox - 360 Dialog - Webhook" align="center" width="700px">
+        <p id="imagen56" style="text-align:center;font-size:0.8rem"><i>Imagen 56 Servicio de conexión Whatsapp Sandbox - 360 Dialog - Webhook</i></p>
+    <p>Estos servicios permiten la consulta y actualización de la url del webhook del sandbox de 360 Dialog.</p>
+    <li>Servicios para la Configuración y Consulta del Webhook del Número de Producción de 360 Dialog</li><br>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/WeebhookProduccion360.png" alt="Servicio de conexión Whatsapp Sandbox - 360 Dialog" align="center" width="700px">
+        <p id="imagen57" style="text-align:center;font-size:0.8rem"><i>Imagen 57 Servicio de conexión Whatsapp Sandbox - 360 Dialog - Weebhook Número de Producción</i></p>
+    <p>Estos servicios permiten la consulta y actualización de la url del webhook del número de producción de 360 Dialog.</p>
+    <li>Servicio para la Recepción de Mensajes Telegram</li><br>
+    <p>Este servicio escucha las peticiones realizadas desde el API de Whatsapp para el número sandbox de 360 Dialog, gestiona la comunicación del chatbot a través de la plataforma de Whatsapp desde la API de 360 Dialog. Es necesario verificar un token individual para cada usuario del sandbox habilitado.</p>
+    <p>Este endpoint gestiona toda la lógica de recepción de mensajes y preprocesado de multimedia para enviar el mensaje recibido desde el sandbox de 360 Dialog al flujo de conversación de watson assistant.</p>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/ServicioConexionTelegram.png" alt="Servicio de Conexión Telegram" align="center" width="700px">
+        <p id="imagen58" style="text-align:center;font-size:0.8rem"><i>Imagen 58 Servicio de Conexión Telegram.</i></p>
+    <p>Este servicio escucha las peticiones realizadas desde el API de Telegram cuando un bot configurado con la url del endpoint recibe un mensaje, gestiona la comunicación del chatbot a través de la plataforma de Telegram. Actualmente está orientado exclusivamente al rol de agentes y tiene un comportamiento similar al de los agentes en whatsapp, con las particularidades requeridas por la plataforma de Telegram para la interacción de mensajes.</p>
+    <li>Consulta de información para métricas Frontend</li><br>
+    <p>El backend también gestiona las consultas realizadas por la interfaz web que permite conocer estadísticas e información importante acerca de los datos almacenados por el chatbot. Estas consultas son realizadas con base en un periodo de fechas determinado, el cual es recibido por el backend en formato JSON, como se ve en la Imagen 42.</p>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/EndpointConsultaMetricas.png" alt="Ejemplo de Endpoint de Consulta de Métricas" align="center" width="700px">
+        <p id="imagen59" style="text-align:center;font-size:0.8rem"><i>Imagen 59 Ejemplo de Endpoint de Consulta de Métricas.</i></p>
+    <p>El endpoint recibe un objeto json con los campos necesarios para la consulta, con ellos el backend realiza la consulta específica para cada petición, la procesa y retorna la respuesta en formato JSON. Así como el ejemplo mostrado, se pueden encontrar los siguientes endpoints de consulta para la interfaz de métricas desde el backend:</p>
+    <ul type="square">
+<li><b>/getsede:</b> Endpoint de consultas por cada sede disponible.</li>
+<li><b>/getcatsmenu:</b> Endpoint de consultas por cada categoría del menú principal.</li>
+<li><b>/getsolution:</b> Endpoint de respuestas a la pregunta de satisfacción.</li>
+<li><b>/getservicequalification:</b> Endpoint de respuestas a la encuesta de calificación del servicio.</li>
+<li><b>/getsenttemplates:</b> Endpoint de consulta de los mensajes plantilla enviados desde la plataforma.</li>
+<li><b>/getgeneral:</b> Endpoint para el total de mensajes registrados por día.</li>
+<li><b>/getmessagesbyhour:</b> Endpoint para consultar el número de mensajes por hora en un mismo día.</li>
+<li><b>/getothermessages:</b> Endpoint de mensajes no comprendidos por el chatbot.</li>
+<li><b>/getvisits:</b> Endpoint que retorna el número de usuarios del chatbot por día.</li>
+<li><b>/getchatsbyagent:</b> Endpoint para la consulta de mensajes atendidos por cada agente.</li>
+<li><b>/gettransfered:</b> Endpoint que retorna el total de chats transferidos a agentes.</li>
+<li><b>/getbotvsagents:</b> Endpoint para el total de chats atendidos por el bot versus el total de chats atendidos por agentes.</li>
+<li><b>/getchatsbyprogram:</b> Endpoint para el total de consultas realizadas por cada programa académico.</li>
+<li><b>/getrequestsbysection:</b> Endpoint de consultas por cada subsección dentro de una categoría principal.</li>
+<li><b>/getresponsetimeagents:</b> Endpoint que retorna los tiempos de respuesta promedio de cada agente.</li>
+<li><b>/requestreport:</b> Endpoint para la generación de reportes descargables en formato .csv</li>
+<li><b>/requesttemplates:</b> Endpoint para la consulta de plantillas disponibles para su envío masivo desde la plataforma web.</li>
+<li><b>/savetemplate:</b> Endpoint que permite el registro de nuevas plantillas de mensajes para envíos masivos.</li>
+<li><b>/sendtemplates:</b> Endpoint para el envío de mensajes plantilla a números de Whatsapp.</li>
+<li><b>/statuscallback:</b> Endpoint que recibe el estado de los mensajes plantilla enviados mediante la plataforma web para su posterior consulta.</li>
+<li><b>/getcallback:</b> Endpoint que retorna los estados de los mensajes plantilla enviados a la plataforma web como retroalimentación del envío masivo.</li>
+<li><b>/statuscallbackretake:</b> Endpoint que recibe el estado de un intento de retoma de usuario por parte de un agente para su posterior consulta.</li>
+<li><b>/getcallbackretake:</b> Endpoint que retorna el estado de los mensajes enviados para la retoma de un usuario por parte de un agente como retroalimentación para éste.</li>
+<li><b>/requestusers:</b> Endpoint para la consulta de información de los usuarios en la plataforma web.</li>
+<li><b>/getuserbyid:</b> Endpoint que permite la consulta detallada de la información de un usuario.</li>
+<li><b>/saveuser:</b> Endpoint para la actualización de datos de un usuario.</li>
+<li><b>/deleteuser:</b> Endpoint para la eliminación de un usuario del sistema.</li>
+<li><b>/deleteusers:</b> Endpoint para la eliminación masiva de usuarios del sistema.</li>
+<li><b>/updateUserProfile:</b> Permite la actualización de datos de un usuario.</li>
+<li><b>/createticket:</b> Endpoint que permite crear nuevos tickets en la plataforma.</li>
+<li><b>/requesttickets:</b> Endpoint que realiza la consulta de información de tickets en la aplicación.</li>
+<li><b>/updateticketstatus:</b> Endpoint para la actualización del estado de un ticket.</li>
+<li><b>/updatetickettags:</b> Endpoint para la actualización de las etiquetas de un ticket.</li>
+<li><b>/updateticketsede:</b> Endpoint para la actualización de la sede de un ticket.</li>
+<li><b>/updateticketagent:</b> Endpoint para la actualización del agente asignado a un ticket.</li>
+<li><b>/getticket:</b> Permite la consulta de un ticket basado en su id.</li>
+<li><b>/getagent:</b> Permite la consulta de un agente basado en su id.</li>
+<li><b>/getagents:</b> Endpoint para la consulta de agentes disponibles en la plataforma web.</li>
+<li><b>/setagentstatus:</b> Endpoint que permite configurar el estado de un agente en la plataforma.</li>
+<li><b>/updatepasswordagent:</b> Endpoint que permite el cambio de clave de un usuario en la plataforma web.</li>
+<li><b>/saveagent:</b> Endpoint para la inserción o actualización de un agente chatbot.</li>
+<li><b>/deteleagent:</b> Endpoint que permite la eliminación de un agente chatbot del sistema.</li>
+<li><b>/deleteagents:</b> Endpoint que gestiona la eliminación masiva de agentes.</li>
+<li><b>/getcompetences:</b> Endpoint para la consulta de áreas de competencias o programas académicos disponibles para asignar a agentes.</li>
+<li><b>/savecompetence:</b> Endpoint para la creación de nuevas áreas de competencia o programas académicos para agentes.</li>
+<li><b>/deletecompetence:</b> Endpoint para la eliminación única de competencias.</li>
+<li><b>/deletecompetences:</b> Endpoint que permite la eliminación masiva de competencias.</li>
+<li><b>/gettags:</b> Endpoint para la consulta de etiquetas para los tickets.</li>
+<li><b>/savetag:</b> Endpoint para la creación de nuevas etiquetas de tickets</li>
+<li><b>/deletetag:</b> Endpoint para la eliminación de etiquetas.</li>
+<li><b>/deletetags:</b> Endpoint para la eliminación masiva de etiquetas</li>
+<li><b>/getmessages:</b> Endpoint para la consulta de mensajes asociados a un ticket.</li>
+    </ul><br>
+    <p>Por último, el backend utiliza express como middleware para habilitar las rutas correspondientes a la plataforma web Frontend, apuntando al directorio build generado por la compilación del componente Frontend del proyecto, explicado en la siguiente sección. A continuación, se muestra el fragmento de código que habilita esta característica en la Imagen 43.</p>
+        <p style="text-align:center"><image
+        src="/chatbot_ecci_documentation/Img/ConexionMiddlewareFrontend.png" alt="Conexión Middleware con Frontend" align="center" width="700px">
+        <p id="imagen60" style="text-align:center;font-size:0.8rem"><i>Imagen 60 Conexión Middleware con Frontend.</i></p>
+    </ul>
+</ol>
+
+<h3 id="reactjs"><b>VIII. ReactJS Frontend (Métricas)</b></h3>
+
+<p style="margin-left:2rem">El componente Frontend del proyecto permite el levantamiento de una plataforma web para la visualización de métricas estadísticas básicas acerca de la usabilidad del Chatbot por los usuarios, identificar de mejor manera la población que hace uso de la herramienta, qué categorías son las más visitadas, entre otras. Así como el registro de los mensajes que no son comprendidos por el bot mes a mes.</p>
+<p style="margin-left:2rem">A continuación, se muestran los pasos para poder descargar, ejecutar y compilar el proyecto:</p>
+<ol style="margin-left:2rem" type="A">
+<b><li id="clonandorepositoriofront">Clonando el Repositorio</li></b><br>
+<i><p>git clone git@github.com:chatbotsONU-UECCI/chatbotECCI.git</p></i>
+<b><li id="instalandodependeciasfront">Instalando Dependencias</li></b><br>
+<i><p>cd chatbotECCI/front/</p></i>
+<p><b>Nota:</b> Debe ubicarse en la ubicación del "front" del proyecto para ejecutar este componente.</p>
+<i><p>yarn install</p></i>
+<b><li id="ejecutarproyectofront">Ejecutar el Proyecto en Desarrollo</li></b><br>
+<i><p>yarn start</p></i>
+<p><b>Nota: </b>Este comando crea un servidor de desarrollo para visualizar la plataforma web, este servidor se ejecuta por defecto en http://localhost/3000</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/PaginaPrincipalFront.png" alt="Página Principal Frontend" align="center" width="700px">
+    <p id="imagen61" style="text-align:center;font-size:0.8rem"><i>Imagen 61 Página Principal Frontend.</i></p>
+<b><li id="compilandoproyectofront">Compilando el Proyecto para Producción</li></b><br>
+<i><p>yarn run build</p></i>
+<p><b>Nota: </b>ste comando crea un nuevo directorio llamado "build" que es usado por el Backend para ser desplegado en las rutas correspondientes.</p>
+<b><li id="estructuraarchivosfront">Estructura de Archivos del Proyecto</li></b><br>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/EstructuraArchivosFrontend.png" alt="Estructura de Archivos Frontend" align="center" width="200px">
+    <p id="imagen62" style="text-align:center;font-size:0.8rem"><i>Imagen 62 Estructura de Archivos Frontend.</i></p>
+<p>En la Imagen 45 se puede apreciar la estructura de archivos para el componente Frontend, la cual se compone principalmente de:</p>
+<ul type="disc">
+<li><b>build/</b> Directorio en donde se almacenan los archivos compilados del proyecto para su despliegue.</li>
+<li><b>node_modules/</b> Directorio donde se almacenan las librerías y dependencias de nodeJS necesarias para la ejecución del proyecto.</li>
+<li><b>public/</b> Directorio donde se encuentra el <i>index.html</i> del proyecto.</li>
+<li><b>src/</b> Directorio donde se encuentra todo el código fuente del proyecto.</li>
+<ul type="circle">
+<li><b>assets/</b> Directorio donde se almacenan los archivos estáticos del proyecto (imágenes, estilos, fuentes, etc).</li>
+<li><b>components/</b> Directorio donde se encuentran todos los componentes del proyecto.</li>
+<li><b>layouts/</b> Directorio para los marcos de estructura de la página web.</li>
+<li><b>variables/</b> Carpeta donde se encuentran los archivos de configuración base del proyecto.</li>
+<li><b>views/</b> Directorio en donde se almacenan las distintas vistas de la página web.</li>
+<li><b>index.js</b> Archivo principal del proyecto de ReactJS.</li>
+<li><b>routes.js</b> rchivo donde se definen las rutas públicas de la página web.</li>
+<li><b>package.json</b> Archivo de definición del proyecto, contiene la información necesaria para ejecutar el proyecto.</li>
+</ul>
+</ul>
+</ol>
