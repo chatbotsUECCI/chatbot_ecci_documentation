@@ -3,7 +3,7 @@
 #### Índice
 
 <p style="margin-left:1.2rem;"><b>Documentación Técnica Chatbot Universidad ECCI</b></p>
-
+<header>
 <ol style="margin-left:1rem;">
 <li><a href="#introduccion">Introducción</a></li>
 <li><a href="#consideracion">Consideraciones y Requerimientos Previos</a></li>
@@ -61,7 +61,7 @@
         <li><a href="#recomendaciones">Recomendaciones</a></li>
     </ol>
 </ol> 
-
+</header>
 ---
 <h3 id="indiceImagenes"></h3>
 
