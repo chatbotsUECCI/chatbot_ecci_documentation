@@ -600,8 +600,6 @@ src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura d
         <p style="text-align:center"><image
         src="/chatbot_ecci_documentation/Img/ConexionMiddlewareFrontend.png" alt="Conexión Middleware con Frontend" align="center" width="700px">
         <p id="imagen60" style="text-align:center;font-size:0.8rem"><i>Imagen 60 Conexión Middleware con Frontend.</i></p>
-    </ul>
-</ol>
 
 <h3 id="reactjs"><b>VIII. ReactJS Frontend (Métricas)</b></h3>
 
@@ -644,4 +642,3 @@ src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura d
 <li><b>package.json</b> Archivo de definición del proyecto, contiene la información necesaria para ejecutar el proyecto.</li>
 </ul>
 </ul>
-</ol>
