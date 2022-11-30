@@ -1,6 +1,6 @@
 ## 4. Implementación y Despliegue
 
-<h5 id="IBMWatson"></h5>
+<h3 id="IBMWatson"></h3>
 
 ### I. IBM Watson Assistant
 
@@ -12,18 +12,18 @@ un entrenamiento. Watson Assistant se puede implementar en cualquier entorno en 
 nube o local, lo que significa que la IA más inteligente finalmente está disponible en
 cualquier lugar donde la necesite.</p>
 
-<h5 id="funcionamiento"></h5>
-
-#### A. Funcionamiento
+<h4 id="funcionamiento"><b>A. Funcionamiento</b></h4>
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
 <p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p>
 
-<p>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</p>
-<p>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</p>
-<p>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</p>
-<p>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</p>
+<ol>
+    <li>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</li>
+    <li>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</li>
+    <li>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</li>
+    <li>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</li>
+</ol>
 
 <h4 id="crearasistente"><b>B. Crear un Asistente Watson Assistant</b></h4>
 
@@ -59,9 +59,7 @@ src="/chatbot_ecci_documentation/Img/PaginaAsistenteChatbot.png" alt="Página Pr
 src="/chatbot_ecci_documentation/Img/AsistenteUECCIWatson.png" alt="Asistente UECCI en Watson Assistant" align="center" width="700px">
 <p id="imagen9" style="text-align:center;font-size:0.8rem"><i>Imagen 9 Asistente UECCI en Watson Assistant</i></p>
 
-<h5 id="intenciones"></h5>
-
-#### C. Intenciones
+<h4 id="intenciones"><b>C. Intenciones</b></h4>
 
 <p>Las intenciones en Watson Assistant se activan a través de un concepto conocido como confianza. Watson Assistant no solo crea un modelo para devolver cuál es la intención correcta. De hecho, crea un modelo diferente para cada intento. Cuando un usuario hace una pregunta, esa expresión se envía a cada modelo de intención. Cada uno de esos modelos de intención devuelve una puntuación de confianza, que indica qué tan "seguro" es el modelo de que la expresión se ajusta a esa intención. Cuando verifica si # < intent > se cumple la condición, eso esencialmente solo agrega esas puntuaciones y verifica si la intención de puntuación más alta es la que está verificando. Para capturar múltiples intenciones de un solo enunciado de usuario, vamos a seguir 3 pasos.</p>
 
@@ -81,9 +79,7 @@ src="/chatbot_ecci_documentation/Img/Intenciones.png" alt="Intenciones Chat UECC
 src="/chatbot_ecci_documentation/Img/EjemploIntencion.png" alt="Ejemplo de Intención: Aspirante" align="center" width="700px">
 <p id="imagen11" style="text-align:center;font-size:0.8rem"><i>Imagen 11 Ejemplo de Intención: Aspirante</i></p>
 
-<h5 id="entidades"></h5>
-
-#### D. Entidades
+<h4 id="entidades"><b>D. Entidades</b></h4>
 
 <p>Una entidad representa un término o un objeto que da contexto a una acción. Las entidades representan información en la entrada de usuario que es relevante para la finalidad de la intención. Los nombres de las entidades van precedidos del símbolo @entidad. Una entidad puede tener varios valores, y a cada uno de estos valores se le configura sinónimos, los cuales son las diferentes maneras en que puede ser mencionado ese valor de la entidad.</p>
 
@@ -91,9 +87,7 @@ src="/chatbot_ecci_documentation/Img/EjemploIntencion.png" alt="Ejemplo de Inten
 src="/chatbot_ecci_documentation/Img/Entidades.png" alt="Entidades Chat UECCI" align="center" width="700px">
 <p id="imagen12" style="text-align:center;font-size:0.8rem"><i>Imagen 12 Entidades Chat UECCI</i></p>
 
-<h5 id="dialogo"></h5>
-
-#### E. Diálogo
+<h4 id="dialogo"><b>E. Diálogo</b></h4>
 
 <p>La estructura de diálogo está basada en nodos, es decir tiene forma de árbol. Cuando un mensaje es analizado por Watson Assistant, dicho mensaje recorre cada uno de estos nodos en el orden en el que han sido definidos, para encontrar una intención y una entidad que tengan relación con dicho mensaje. Cada nodo del diálogo contiene, como mínimo, una condición; y puede contener una respuesta o textos o varios nodos hijos que de igual forma deben contener una condición y una respuesta. El servicio procesa el diálogo desde el primer nodo en el árbol hasta el último. A medida que recorre por el árbol, si el servicio encuentra una condición que se cumple, activa dicho nodo. Luego se mueve por el nodo que ha sido activado para comparar la entrada del usuario con las condiciones de los nodos hijos, desde el primer nodo hijo hasta el último.</p>
 
@@ -107,9 +101,7 @@ src="/chatbot_ecci_documentation/Img/Nodo.png" alt="Nodo Menú en Diálogo Chat 
 
 <p style="margin-left: 3rem"><b>Nota: </b>Mensaje no comprendido (anything else) Este nodo se implementó como un respaldo si Watson Assistant no comprende el mensaje, y se le solicita al usuario que repita la pregunta de otra manera.</p>
 
-<h5 id="IBMObject"></h5>
-
-### II. IBM Object Storage
+<h3 id="IBMObject"><b>II. IBM Object Storage</b></h3>
 
 <p>El componente de Object Storage es un servicio de almacenamiento en la nube que permite subir archivos estáticos para ser accedidos desde internet de forma rápida y segura. Es parte de la suite de servicios de IBM, y está disponible desde el plan Lite.</p>
 
@@ -159,43 +151,33 @@ src="/chatbot_ecci_documentation/Img/DetalleCloud.png" alt="Detalle de Archivo e
 <p>Y contarán con un URL público de objeto, el cual es la URL pública para acceder a ese objeto almacenado en la nube de IBM.</p>
 
 
-<h5 id="360dialog"></h5>
-
-### III. 360 Dialog
+<h3 id="360dialog"><b>III. 360 Dialog</b></h3>
 
 <p>360 Dialog es una plataforma de mensajería instantánea que brinda un API de conexión con Whatsapp, la cuál permite una conexión simplificada y acorde a las referencias de la documentación del API de Whatsapp, así como una actualización de versiones del API de Whatsapp sin demora. La plataforma principal de 360 Dialog se encuentra alojada en <a href="https://www.360dialog.com">https://www.360dialog.com</a>.</p>
 
 <p>El menú de la plataforma permite visualizar la página principal de la consola, un listado de cuentas de whatsapp activas, métricas de uso y facturación, conexión de integraciones y soporte. Adicionalmente en la sección de perfil hay otras opciones disponibles como configuración de la cuenta y la organización o opciones de facturación y cierre de sesión.</p>
 
-
 <p style="text-align:center"><image 
 src="/chatbot_ecci_documentation/Img/PaginaPrincipal360Dialog.png" alt="Página Principal 360 Dialog" align="center" width="300px">
 <p id="imagen21" style="text-align:center;font-size:0.8rem"><i>Imagen 21 Página Principal de 360 Dialog</i></p>
 
-
 <p>El Dashboard muestra un resumen del estado de las cuentas de Whatsapp activas en la plataforma, así como una sección de ayuda y documentación de apoyo.</p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/Dashboard360Dialog.png" alt="Dashboard de 360 Dialog" align="center" width="500px">
 <p id="imagen22" style="text-align:center;font-size:0.8rem"><i>Imagen 22 Dashboard de 360 Dialog</i></p>
 
-
 <p>La sección de cuentas de Whatsapp permite la gestión y administración de las cuentas de Whatsapp enlazadas con 360 Dialog, la generación de API Keys para la conexión vía API con la plataforma y la gestión de plantillas de mensajes.</p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/SeccionWhatsapp360Dialog.png" alt="Sección de Whatsapp en 360 Dialog" align="center" width="500px">
 <p id="imagen23" style="text-align:center;font-size:0.8rem"><i>Imagen 23 Sección de Whatsapp en 360 Dialog</i></p>
 
-
 <p>Por su parte, en la sección de métricas y facturación se puede visualizar un resumen del balance y saldo de los números de Whatsapp. A la fecha de esta documentación, 360 Dialog cuenta con un modelo de facturación basado en saldos prepagados con auto renovación para disponibilidad automática, en la página también se puede visualizar un resumen general de uso del servicio de mensajería y una subsección con las opciones de auto renovación.</p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/SeccionMetricas360Dialog.png" alt="Sección de Métricas en 360 Dialog" align="center" width="500px">
 <p id="imagen24" style="text-align:center;font-size:0.8rem"><i>Imagen 24 Sección de Métricas en 360 Dialog</i></p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/SeccionMetricasFacturacion360Dialog.png" alt="Sección de Métricas en 360 Dialog" align="center" width="500px">
@@ -203,20 +185,16 @@ src="/chatbot_ecci_documentation/Img/SeccionMetricasFacturacion360Dialog.png" al
 
 <p>Por último, en la sección del perfil, en las opciones de facturación se puede encontrar el detalle de los datos de facturación y el historial de cobros realizados por la plataforma.</p>
 
-
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/SeccionPerfil360Dialog.png" alt="Sección de Perfil en 360 Dialog" align="center" width="500px">
 <p id="imagen26" style="text-align:center;font-size:0.8rem"><i>Imagen 26 Sección de Perfil en 360 Dialog</i></p>
-
 
 <p>A diferencia de otros proveedores, 360 Dialog no cobra tarifas por mensajería, solo maneja un cobro mensual por el alojamiento y conexión de cada número o cuenta de Whatsapp vinculada a la plataforma. A la fecha de esta documentación, el costo por cada número activo en la plataforma es de 49 EUR mensuales. Los costos de mensajería son directamente los dispuestos por Meta para el API empresarial de Whatsapp. Para mayor información acerca de los precios de cada servicio: </p>
 
 <a href="https://www.360dialog.com/whatsapp-business-api#pricing">https://www.360dialog.com/whatsapp-business-api#pricing</a>
 <a href="https://business.whatsapp.com/products/platform-pricing">https://business.whatsapp.com/products/platform-pricing</a>
 
-<h5 id="meta"></h5>
-
-### IV. Meta Business Platform
+<h3 id="meta"><b>IV. Meta Business Platform</b></h3>
 
 <p>A mediados del 2022, Meta abrió la posibilidad para que las empresas puedan conectarse directamente a su API de servicios de Whatsapp, lo que permite la integración directa sin intermediarios para el uso de cuentas empresariales a través del API de Meta para Whatsapp. </p>
 
@@ -240,11 +218,9 @@ src="/chatbot_ecci_documentation/Img/PlataformaDesarrolladores.png" alt="Selecci
 
 <p>Una vez creada la aplicación es posible visualizar una lista de productos o servicios disponibles en Meta para la aplicación, para conectar el servicio de Whatsapp o Messenger deben configurarse los correspondientes servicios.</p>
 
-
 <p style="text-align:center"><image
     src="/chatbot_ecci_documentation/Img/VisualizacionServiciosMeta.png" alt="Visualización Servicios de Meta" align="center" width="500px">
 <p id="imagen29" style="text-align:center;font-size:0.8rem"><i>Imagen 29 Visualización Servicios de Meta</i></p>
-
 
 <p>Cada servicio se configura a través de Webhooks, por lo que al activar alguno de ellos se añadirá automáticamente el servicio de Webhooks también.</p>
 
@@ -252,34 +228,25 @@ src="/chatbot_ecci_documentation/Img/PlataformaDesarrolladores.png" alt="Selecci
 
 <p>Por su parte, se debe configurar un Webhook para escuchar las peticiones del API de Facebook para messenger, así como los eventos a ser escuchados por el webhook. Otras opciones o características no son usadas actualmente.</p>
 
-
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/ConfiguracionWeebhook.png" alt="Configuración Weebhook para Peticiones de Facebook" align="center" width="500px">
 <p id="imagen30" style="text-align:center;font-size:0.8rem"><i>Imagen 30 Configuración Weebhook para Peticiones de Facebook</i></p>
 
-
 <p>Para el servicio de Whatsapp también debe configurarse un webhook para conectar el servicio API de Whatsapp.</p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/ConexionWeebhookWhatsapp.png" alt="Configuración Weebhook para Peticiones de Whatsapp" align="center" width="500px">
 <p id="imagen31" style="text-align:center;font-size:0.8rem"><i>Imagen 31 Configuración Weebhook para Peticiones de Whatsapp</i></p>
 
-
 <p>Para poder usar el servicio es necesario conectar una cuenta de Whatsapp Business. Desde la plataforma empresarial de facebook, en la sección de cuentas de Whatsapp se puede realizar la gestión y administración de cuentas de Whatsapp conectadas a una cuenta empresarial.</p>
-
 
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/AdministracionServiciosWhatsapp.png" alt="Conexión Cuenta Whatsapp desde Plataforma Empresarial de Facebook" align="center" width="500px">
 <p id="imagen32" style="text-align:center;font-size:0.8rem"><i>Imagen 32 Conexión Cuenta Whatsapp desde Plataforma Empresarial de Facebook</i></p>
 
-
 <p>La opción de “Administración de Whatsapp” permite ingresar a la plataforma de administración de Whatsapp de Meta. La cual es la plataforma principal de gestión del servicio de Whatsapp de Meta.</p>
 
-
-<h5 id="plataformameta"></h5>
-
-### V. Plataforma de Administración de Meta para Whatsapp 
+<h3 id="plataformameta"><b>V. Plataforma de Administración de Meta para Whatsapp </b></h3>
 
 <p>La plataforma de administración de Meta para Whatsapp brinda una gestión centralizada del servicio de mensajería Whatsapp desde Meta, en ella se pueden visualizar un listado resumen de las cuentas de Whatsapp activas asociadas a una cuenta empresarial específica, así como un conjunto de opciones específicas para cada cuenta empresarial vinculada, como métricas, gestión de plantillas de mensajes, números de teléfono asociados a la cuenta de Whatsapp y catálogo de productos.</p>
 
@@ -313,15 +280,11 @@ src="/chatbot_ecci_documentation/Img/PlantillasMensajes.png" alt="Plantillas de 
 src="/chatbot_ecci_documentation/Img/DetallesPlantilla.png" alt="Detalles de las Plantillas de Mensajes" align="center" width="500px">
 <p id="imagen37" style="text-align:center;font-size:0.8rem"><i>Imagen 37 Detalles de las Plantillas de Mensajes.</i></p>
 
-<h5 id="mongodb"></h5>
-
-### VI. MongoDB
+<h3 id="mongodb"><b>VI. MongoDB</b></h3>
 
 <p>MongoDB es una base de datos orientada a documentos. Esto quiere decir que en lugar de guardar los datos en registros, guarda los datos en documentos. Estos documentos son almacenados en BSON, que es una representación binaria de JSON. Una de las diferencias más importantes con respecto a las bases de datos relacionales, es que no es necesario seguir un esquema. Los documentos de una misma colección - concepto similar a una tabla de una base de datos relacional, con la diferencia que pueden tener esquemas diferentes.</p>
 
-<h4 id="ingresoplataforma"></h4>
-
-#### A.Ingreso a la plataforma
+<h4 id="ingresoplataforma"><b>A.Ingreso a la plataforma</b></h4>
 
 <p>Para crear una base de datos MongoDB se accede al link <a href="https://account.mongodb.com/account/login">https://account.mongodb.com/account/login</a> con una cuenta ya creada.</p>
     
@@ -371,36 +334,35 @@ src="/chatbot_ecci_documentation/Img/ListaColeccionesMongo.png" alt="Lista de Co
     
 <p>A continuación, se detallan las distintas colecciones disponibles en el proyecto chatbot:</p>
 
-<p><b>agents:</b> Almacena la información de los agentes.</p>
-<p><b>campus:</b> Guarda las consultas realizadas por sede.</p>
-<p><b>candidates:</b> Almacena la información de los aspirantes.</p>
-<p><b>categories:</b> Registra las consultas de los usuarios cuando acceden a una categoría específica del menú principa</p>
-<p><b>chatsbyacademicprogram:</b> Guarda las consultas por programa académico.</p>
-<p><b>chatsbyagent:</b> Guarda los chats atendidos por cada agente.</p>
-<p><b>chatsbybot:</b> Guarda los chats atendidos exclusivamente por el bot.</p>
-<p><b>competences:</b> Guarda el nombre de los programas académicos que se encuentran en la universidad.</p>
-<p><b>login:</b> Guarda los datos de usuario y contraseña de acceso para interfaz web.</p>
-<p><b>messages:</b> Registra la interacción de mensajes de los usuarios con el bot.</p>
-<p><b>messagesagents:</b> Registra la interacción de mensajes de los usuarios con agentes.</p>
-<p><b>othermessages:</b> Almacena los mensajes que el bot no comprendió.</p>
-<p><b>requestsbysection:</b> Registra las consultas realizadas por sección dentro de cada categoría del menú principal.</p>
-<p><b>sandbox_dialog: </b> Almacena los registros de números de Whatsapp y API Keys de conexión al sandbox de 360 Dialog para cada número.</p>
-<p><b>satisfaction:</b> Registra las respuestas de satisfacción de los usuarios.</p>
-<p><b>sede:</b> Guarda el registro de consultas de cada número a una sede específica en el chatbot.</p>
-<p><b>senttemplates</b> Almacena el registro de mensajes plantilla enviados en campañas masivas y el estado de los mismos.</p>
-<p><b>servicequalification:</b> Registra las respuestas de calificación del servicio por parte de los usuarios.</p>
-<p><b>sessions:</b> Guarda las sesiones activas de los usuarios de Watson Assistant y el tiempo que llevan en sesión.</p>
-<p><b>sessionsagents:</b> Guarda las sesiones activas de los agentes con los usuarios.</p>
-<p><b>tags:</b> Almacena las etiquetas de aspirante nuevo u homologado.</p>
-<p><b>templatesmessages:</b> Almacena los mensajes plantillas aprobados disponibles para envío masivo desde la interfaz web.</p>
-<p><b>tickets:</b> Guarda el registro de tickets creados en el chatbot.</p>
-<p><b>unassignedTickets:</b> Guarda el registro de tickets no asignados a agentes debido a la no disponibilidad de agentes para el programa consultado al momento de la consulta.</p>
-<p><b>users:</b> Guarda la información de los usuarios.</p>
+<ul type="disc">
+    <li><b>agents:</b> Almacena la información de los agentes.</li>
+    <li><b>campus:</b> Guarda las consultas realizadas por sede.</li>
+    <li><b>candidates:</b> Almacena la información de los aspirantes.</li>
+    <li><b>categories:</b> Registra las consultas de los usuarios cuando acceden a una categoría específica del menú principa</li>
+    <li><b>chatsbyacademicprogram:</b> Guarda las consultas por programa académico.</li>
+    <li><b>chatsbyagent:</b> Guarda los chats atendidos por cada agente.</li>
+    <li><b>chatsbybot:</b> Guarda los chats atendidos exclusivamente por el bot.</li>
+    <li><b>competences:</b> Guarda el nombre de los programas académicos que se encuentran en la universidad.</li>
+    <li><b>login:</b> Guarda los datos de usuario y contraseña de acceso para interfaz web.</li>
+    <li><b>messages:</b> Registra la interacción de mensajes de los usuarios con el bot.</li>
+    <li><b>messagesagents:</b> Registra la interacción de mensajes de los usuarios con agentes.</li>
+    <li><b>othermessages:</b> Almacena los mensajes que el bot no comprendió.</li>
+    <li><b>requestsbysection:</b> Registra las consultas realizadas por sección dentro de cada categoría del menú principal.</li>
+    <li><b>sandbox_dialog: </b> Almacena los registros de números de Whatsapp y API Keys de conexión al sandbox de 360 Dialog para cada número.</li>
+    <li><b>satisfaction:</b> Registra las respuestas de satisfacción de los usuarios.</li>
+    <li><b>sede:</b> Guarda el registro de consultas de cada número a una sede específica en el chatbot.</li>
+    <li><b>senttemplates</b> Almacena el registro de mensajes plantilla enviados en campañas masivas y el estado de los mismos.</li>
+    <li><b>servicequalification:</b> Registra las respuestas de calificación del servicio por parte de los usuarios.</li>
+    <li><b>sessions:</b> Guarda las sesiones activas de los usuarios de Watson Assistant y el tiempo que llevan en sesión.</li>
+    <li><b>sessionsagents:</b> Guarda las sesiones activas de los agentes con los usuarios.</li>
+    <li><b>tags:</b> Almacena las etiquetas de aspirante nuevo u homologado.</li>
+    <li><b>templatesmessages:</b> Almacena los mensajes plantillas aprobados disponibles para envío masivo desde la interfaz web.</li>
+    <li><b>tickets:</b> Guarda el registro de tickets creados en el chatbot.</li>
+    <li><b>unassignedTickets:</b> Guarda el registro de tickets no asignados a agentes debido a la no disponibilidad de agentes para el programa consultado al momento de la consulta.</li>
+    <li><b>users:</b> Guarda la información de los usuarios.</li>
+</ul>
 
-
-<h4 id="conectividad"></h4>
-
-#### B. Conectividad con NodeJS
+<h4 id="conectividad"><b>B. Conectividad con NodeJS</b></h4>
 
 <p>NodeJS es una tecnología backend basada en JavaScript, para conectarse a la base de datos se usa un archivo server.js. Previo a esto debe instalarse la librería correspondiente mediante el gestor de paquetes para poder ser importada en el archivo, como se ve a continuación en la Imagen 33.</p>
 
@@ -408,9 +370,7 @@ src="/chatbot_ecci_documentation/Img/ListaColeccionesMongo.png" alt="Lista de Co
 src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a MongoDB en NodeJS" align="center" width="700px">
 <p id="imagen46" style="text-align:center;font-size:0.8rem"><i>Imagen 46 Conexión a MongoDB en NodeJS</i></p>
 
-<h4 id="buscardatos"></h4>
-
-#### C. Búscar, Insertar, Actualizar y Eliminar Registros
+<h4 id="buscardatos"><b>C. Búscar, Insertar, Actualizar y Eliminar Registros</b></h4>
 
 <ul type="disc">
     <li>Buscar Datos</li>
@@ -418,13 +378,15 @@ src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a Mo
     <i><p>dbmongo.collection("collection").find({ key: "value" })</p></i>
     <li>Insertar Datos</li>
     <p>Insertar documentos es muy sencillo. Como parámetro recibe el objeto JSON que se quiere insertar con la función insertOne o insertMany, junto con una función callback que se ejecuta cuando finaliza la inserción.</p>
-    <i>dbmongo.collection("collection").insertOne({ key: “value” }, function (err, r) {
-    <p style="margin-left:1rem">if (err) {</p>
-    <p style="margin-left:2rem">res.send({ success: false });</p>
-    <p style="margin-left:1rem">} else {</p>
-    <p style="margin-left:2rem">console.log("record created")</p>
-    <p style="margin-left:1rem">}</p>
-    <p>});</p></i>
+    <pre>
+        dbmongo.collection("collection").insertOne({ key: “value” }, function (err, r) {
+            if (err) {
+                res.send({ success: false });
+            } else {
+                console.log("record created")
+            }
+        });
+    </pre>
     <li>Eliminación de Datos</li>
     <p>Para eliminar datos de una colección, se utiliza el comando deleteOne, recibe como parámetro la consulta para filtrar los registros de la colección y elimina la primera coincidencia. También es posible usar el comando deleteMany, si no especificamos ninguna consulta, se eliminarán todos los datos de la colección.</p>
     <i><p>dbmongo.collection("collection").deleteOne({ key: “value” })</p></i>
@@ -436,9 +398,7 @@ src="/chatbot_ecci_documentation/Img/ConexionMongoyNode.png" alt="Conexión a Mo
     </i>
 </ul>
 
-<h5 id="nodejs"></h5>
-
-### V. NodeJS Backend (API)
+<h3 id="nodejs">V. NodeJS Backend (API)</h3>
 
 <p>Node.js es un entorno de ejecución de JavaScript que permite el desarrollo de aplicaciones JavaScript en el lado del servidor. Este entorno de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript.</p>
 
