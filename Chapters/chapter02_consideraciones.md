@@ -13,7 +13,7 @@ una cuenta de WhatsApp con un número telefónico.</p>
 <p>A continuación, se listan las plataformas en las cuáles es necesario tener una cuenta
 de usuario creada para poder realizar correctamente el levantamiento del proyecto:</p>
 
-#### a. IBM Cloud: Es la plataforma de servicios alojados en la nube de IBM.
+#### A. IBM Cloud: Es la plataforma de servicios alojados en la nube de IBM.
 
 <p>Dispone de múltiples servicios en la nube que pueden ser configurados y utilizados
 bajo demanda, además de brindar la posibilidad de trabajar con Watson, la Inteligencia
@@ -23,14 +23,14 @@ Artificial de IBM, para facilitar el desarrollo de servicios a través de esta h
 
 <a href="https://www.ibm.com/es-es/cloud">https://www.ibm.com/es-es/cloud</a>
 
-#### b. Bussines Facebook Manager: Es la plataforma de administración comercial de Facebook.
+#### B. Bussines Facebook Manager: Es la plataforma de administración comercial de Facebook.
 
 <p>Permite la configuración, creación, administración y verificación de múltiples servicios brindados por Facebook para empresas y organizaciones comerciales. Para la
 integración del proyecto con la plataforma de Whatsapp, es necesario pasar por el proceso de creación y verificación de un negocio en esta plataforma, para esto se debe disponer en lo posible de los documentos legales que validan la identidad del negocio u organización a registrar con Facebook.</p>
 
 <a href="https://business.facebook.com/">https://business.facebook.com/</a>
 
-#### c. 360 Dialog: Es el proveedor de servicios de mensajería para Whatsapp
+#### C. 360 Dialog: Es el proveedor de servicios de mensajería para Whatsapp
 
 <p>Debido al modelo de negocio de Whatsapp, éste brinda un servicio de conectividad externa que solo es establecido con organizaciones que garanticen unos
 requerimientos mínimos para asegurar la conectividad, estabilidad y seguridad de los
@@ -43,7 +43,7 @@ cuanto al servicio que ofrece.</p>
 
 <a href="https://www.360dialog.com">https://www.360dialog.com</a>
 
-#### d. MongoDB Cloud: MongoDB Cloud es un servicio de almacenamiento en la nube para bases de datos no relacionales MongoDB.
+#### D. MongoDB Cloud: MongoDB Cloud es un servicio de almacenamiento en la nube para bases de datos no relacionales MongoDB.
 
 <p>MongoDB es un gestor de bases de datos no relacionales (Nosql) que ofrece velocidad, dinamismo, fácil integración, y más. Puede ser implementado en múltiples formas, para efectos de este proyecto se hace uso de la plataforma Cloud de MongoDB para levantar y desplegar de manera fácil y sencilla las bases de datos del proyecto en un entorno Cloud.</p>
 
@@ -56,9 +56,9 @@ cuanto al servicio que ofrece.</p>
 
 <p>Facebook es muy riguroso en su habilitación de servicios comerciales, y es por esto que solicita que cualquier organización que requiera utilizar algunos de sus servicios principales de manera comercial deba estar debidamente registrada como organización o empresa comercial, y debe presentar documentos de soporte legal que certifiquen:</p>
 
-<p>a. Nombre Legal de la Organización</p>
+<p><b>A. Nombre Legal de la Organización</b></p>
 
-<p>b. Dirección Física de la Organización</p>
+<p><b>B. Dirección Física de la Organización</b></p>
 
 <p>Con este proceso Facebook valida la identidad de la organización que quiere usar sus
 servicios, para mantener seguros a sus usuarios de las entidades con las que trabaja;
