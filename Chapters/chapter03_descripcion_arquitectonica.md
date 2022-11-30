@@ -1,4 +1,4 @@
-#### 3. Descripción Arquitectónica
+## 3. Descripción Arquitectónica
 
 
 <p style="text-align:center"><image
