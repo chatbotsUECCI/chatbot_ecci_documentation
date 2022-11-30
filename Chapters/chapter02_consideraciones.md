@@ -30,7 +30,7 @@ integración del proyecto con la plataforma de Whatsapp, es necesario pasar por 
 
 <a href="https://business.facebook.com/">https://business.facebook.com/</a>
 
-#### c. 360 Dialog: </b> Es el proveedor de servicios de mensajería para Whatsapp
+#### c. 360 Dialog: Es el proveedor de servicios de mensajería para Whatsapp
 
 <p>Debido al modelo de negocio de Whatsapp, éste brinda un servicio de conectividad externa que solo es establecido con organizaciones que garanticen unos
 requerimientos mínimos para asegurar la conectividad, estabilidad y seguridad de los
