@@ -16,53 +16,55 @@ cualquier lugar donde la necesite.</p>
 
 #### A. Funcionamiento
 
-<p style="text-align:center"><image
-src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
-<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p>
-
+<><p style="text-align:center">
+<image src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
+<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p></>
+    
 <ol>
     <li>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</li>
     <li>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</li>
     <li>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</li>
     <li>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</li>
-</ol>
 
 <h5 id="crearasistente"></h5>
 
 #### B. Crear un Asistente Watson Assistant
 
+
 <p>El servicio se crea desde la consola de IBM Cloud buscando el servicio en el catálogo, el plan Lite permite un uso gratuito con algunas limitaciones en el servicio, al crear el servicio se debe crear un skill el cual contendrá los componentes de Intenciones, Entidades y Diálogo.</p>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/Catalogo.png" alt="Cátalogo de IBM - Watson Assistant" align="center" width="700px">
-<p id="imagen3" style="text-align:center;font-size:0.8rem"><i>Imagen 3 Cátalogo de IBM - Watson Assistant</i></p>
+<p id="imagen3" style="text-align:center;font-size:0.8rem"><i>Imagen 3 Cátalogo de IBM - Watson Assistant</i></p></>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearServicioWatson.png" alt="Crear Servicio de Watson Assistant" align="center" width="700px">
-<p id="imagen4" style="text-align:center;font-size:0.8rem"><i>Imagen 4 Crear Servicio de Watson Assistant</i></p>
+<p id="imagen4" style="text-align:center;font-size:0.8rem"><i>Imagen 4 Crear Servicio de Watson Assistant</i></p></>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/PaginaPrincipalWatson.png" alt="Página Principal de Watson Assistant" align="center" width="700px">
-<p id="imagen5" style="text-align:center;font-size:0.8rem"><i>Imagen 5 Página Principal de Watson Assistant</i></p>
+<p id="imagen5" style="text-align:center;font-size:0.8rem"><i>Imagen 5 Página Principal de Watson Assistant</i></p></>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearAsistenteWatson.png" alt="Crear Asistente en Watson Assistant" align="center" width="700px">
-<p id="imagen6" style="text-align:center;font-size:0.8rem"><i>Imagen 6 Crear Asistente en Watson Assistant</i></p>
+<p id="imagen6" style="text-align:center;font-size:0.8rem"><i>Imagen 6 Crear Asistente en Watson Assistant</i></p></>
 
 <p>Se puede crear el Dialog Skill con base a un ejemplo que se ofrece o subir un archivo .json con un Dialog Skill ya configurado.</p>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/CrearDialogo.png" alt="Crear Dialogo en Watson Assistant" align="center" width="700px">
-<p id="imagen7" style="text-align:center;font-size:0.8rem"><i>Imagen 7 Crear Dialogo en Watson Assistant</i></p>
+<p id="imagen7" style="text-align:center;font-size:0.8rem"><i>Imagen 7 Crear Dialogo en Watson Assistant</i></p></>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/PaginaAsistenteChatbot.png" alt="Página Principal Asistente Chatbot ECCI" align="center" width="700px">
-<p id="imagen8" style="text-align:center;font-size:0.8rem"><i>Imagen 8 Página Principal Asistente Chatbot ECCI</i></p>
-
+<p id="imagen8" style="text-align:center;font-size:0.8rem"><i>Imagen 8 Página Principal Asistente Chatbot ECCI</i></p></>
+    
+<>
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/AsistenteUECCIWatson.png" alt="Asistente UECCI en Watson Assistant" align="center" width="700px">
 <p id="imagen9" style="text-align:center;font-size:0.8rem"><i>Imagen 9 Asistente UECCI en Watson Assistant</i></p>
-
+</>
+    
 <h5 id="intenciones"></h5>
 
 #### C. Intenciones
@@ -77,13 +79,13 @@ src="/chatbot_ecci_documentation/Img/AsistenteUECCIWatson.png" alt="Asistente UE
 
 <p>Primero, necesitamos definir una intención para agregar una tarea, agregando una serie de ejemplos de cómo las personas podrían agregar una tarea.</p>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/Intenciones.png" alt="Intenciones Chat UECCI" align="center" width="700px">
-<p id="imagen10" style="text-align:center;font-size:0.8rem"><i>Imagen 10 Intenciones Chat UECCI</i></p>
+<p id="imagen10" style="text-align:center;font-size:0.8rem"><i>Imagen 10 Intenciones Chat UECCI</i></p></>
 
-<p style="text-align:center"><image
+<><p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/EjemploIntencion.png" alt="Ejemplo de Intención: Aspirante" align="center" width="700px">
-<p id="imagen11" style="text-align:center;font-size:0.8rem"><i>Imagen 11 Ejemplo de Intención: Aspirante</i></p>
+<p id="imagen11" style="text-align:center;font-size:0.8rem"><i>Imagen 11 Ejemplo de Intención: Aspirante</i></p></>
 
 <h5 id="entidades"></h5>
 
