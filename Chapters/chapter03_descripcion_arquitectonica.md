@@ -1,10 +1,10 @@
 #### 3. Descripción Arquitectónica
 
-<div>
+
 <p style="text-align:center"><image
-src="./Img/ArquitecturaChatbotECCI.png" alt="Descripción Arquitectónica Chatbot para la Universidad ECCI" align="center" width="700px">
+src="/chatbot_ecci_documentation/Img/ArquitecturaChatbotECCI.png" alt="Descripción Arquitectónica Chatbot para la Universidad ECCI" align="center" width="700px">
 <p id="imagen1" style="text-align:center;font-size:0.8rem"><i>Imagen 1 Arquitectura Chatbot</i></p>
-</div>
+
 
 <p>En la Imagen 1 se observa la arquitectura de software del producto, la cual está basada en el servicio conversacional de IBM Watson, el cual permite crear flujos conversacionales inteligentes a través de la identificación de intenciones. A su vez, los demás componentes de la arquitectura están desplegados en algunos servicios de la nube de IBM, como IBM Object Storage para el almacenamiento de archivos estáticos o IBM Cloud Foundry para el despliegue de máquinas virtuales con entornos NodeJS</p>
 
