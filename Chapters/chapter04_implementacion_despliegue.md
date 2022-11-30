@@ -15,19 +15,17 @@ cualquier lugar donde la necesite.</p>
 <h5 id="funcionamiento"></h5>
 
 #### A. Funcionamiento
-<pre>
+
 <p style="text-align:center"><image
 src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamiento Watson Assistant" align="center" width="700px">
-<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p></pre>
+<p id="imagen2" style="text-align:center;font-size:0.8rem"><i>Imagen 2 Funcionamiento Watson Assistant</i></p>
 
 <p>El cliente/usuario interactúa desde WhatsApp con el asistente por medio del punto de integración con NodeJS, el cual está integrado con 360 Dialog para acceder al canal de comunicación WhatsApp y una base de datos MongoDB.</p>
 <p>Nuestro asistente recibe los datos de entrada que proporciona nuestro usuario y los dirige a la sección correspondiente (dialog skill).</p>
 <p>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</p>
 <p>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</p>
 
-<h5 id="crearasistente"></h5>
-
-#### B. Crear un Asistente Watson Assistant
+<h4 id="crearasistente"><b>B. Crear un Asistente Watson Assistant</b></h5>
 
 <p>El servicio se crea desde la consola de IBM Cloud buscando el servicio en el catálogo, el plan Lite permite un uso gratuito con algunas limitaciones en el servicio, al crear el servicio se debe crear un skill el cual contendrá los componentes de Intenciones, Entidades y Diálogo.</p>
 
