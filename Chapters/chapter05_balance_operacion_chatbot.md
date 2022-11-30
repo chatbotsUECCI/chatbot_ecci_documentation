@@ -17,7 +17,7 @@
     <p>Por último, en un caso extremo de eliminación de uno de los recursos de Watson Assistant u Object Storage, se deben recrear los servicios, y subir tanto los archivos estáticos de los recursos e imágenes, como el diálogo del Chatbot a Watson Assistant. Si el servicio eliminado es el de Object Storage, posiblemente se deban actualizar las urls de las imágenes en el flujo del Bot debido a que se re-subieron a un servicio nuevo.</p>
 </ol>
 
-<h3 id="recomendaciones"><b>Recomendaciones</b></h3>
+<h3 id="recomendaciones"><b>II. Recomendaciones</b></h3>
 
 <p  >A continuación, se mencionan algunas recomendaciones a tener en cuenta para la administración, mantenimiento y extensibilidad del proyecto.</p>
 <p  >En primer lugar, es importante recordar que el proyecto está pensado en un principio para generar costos mínimos en cuanto al sostenimiento del sistema, para ello, se hace uso de ciertos planes gratuitos que ofrecen algunas plataformas, para aprovechar los recursos limitados disponibles en estos planes de uso y generar un producto final económico, sustentable y extensible en sus primeras etapas de lanzamiento, según las necesidades del territorio.</p>
