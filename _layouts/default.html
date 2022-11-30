@@ -32,11 +32,63 @@
         {% endif %}
 
         {% if site.show_downloads %}
-        <ul class="downloads">
-          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <ul type="1">
+<li><a href="#introduccion">Introducción</a></li>
+<li><a href="#consideracion">Consideraciones y Requerimientos Previos</a></li>
+    <ol type="I">
+        <li><a href="#cuentasUsuario">Cuentas de Usuario y Plataformas</a></li>
+        <li><a href="#validacionCuentas">Validación de Cuentas</a></li>
+    </ol>
+<li><a href="#descripcionArquitectonica">Descripción Arquitectónica</a></li>
+<li><a href="#implementacion">Implementación y Despliegue</a></li>
+<ol type="I">
+        <li><a href="#IBMWatson">IBM Watson Assistant</a></li>
+        <ol type="a">        
+            <li><a href="#funcionamiento">Funcionamiento</a></li>
+            <li><a href="#crearasistente">Crear un Asistente Watson Assistant</a></li>
+            <li><a href="#intenciones">Intenciones</a></li>
+            <li><a href="#entidades">Entidades</a></li>
+            <li><a href="#dialogo">Diálogo</a></li>
+        </ol>
+        <li><a href="#IBMObject">IBM Object Storage</a></li>
+        <li><a href="#360dialog">360 Dialog</a></li>
+        <li><a href="#meta">Meta Business Platform</a></li>
+        <li><a href="#plataformameta">Plataforma de Administración de Meta para Whatsapp</a></li>
+        <li><a href="#mongodb">MongoDB</a></li>
+        <ol type="a">
+            <li><a href="#ingresoplataforma">Ingreso a la Plataforma</a></li>
+            <li><a href="#conectividad">Conectividad con NodeJS</a></li>
+            <li><a href="#buscardatos">Buscar, Insertar, Actualizar y Eliminar Registros</a></li>
+        </ol>
+        <li><a href="#nodejs">NodeJS Backend (API)</a></li>
+        <ol type="a">
+            <li><a href="#clonandorepositorio">Clonando el Repositorio</a></li>
+            <li><a href="#instalandodependencias">Instalando Dependencias</a></li>
+            <li><a href="#ejecutarproyecto">Ejecutar el Proyecto en Desarrollo</a></li>
+            <li><a href="#subiendoproyecto">Subiendo el Proyecto a Producción</a></li>
+            <li><a href="#EstructuraArchivos">Estructura de Archivos del Proyecto</a></li>
+            <li><a href="#ServiciosAPI">Servicios API Rest</a></li>
+        </ol>
+        <li><a href="#reactjs">ReactJS Frontend (Métricas)</a></li>
+        <ol type="a">
+            <li><a href="#clonandorepositoriofront">Clonando el Repositorio</a></li>
+            <li><a href="#instalandodependeciasfront">Instalando Dependencias</a></li>
+            <li><a href="#ejecutarproyectofront">Ejecutar el Proyecto en Desarrollo</a></li>
+            <li><a href="#compilandoproyectofront">Compilando el Proyecto en Desarrollo</a></li>
+            <li><a href="#estructuraarchivosfront">Estructura de Archivos del Proyecto</a></li>
+        </ol>
+        <li><a href="#ibmcloudfonundry">IBM Cloud Foundry</a></li>
+    </ol>
+    <li><a href="#balance">Balance de Operación Chatbot</a></li>
+    <ol type="I">
+        <li><a href="#dificultades">Posibles Dificultades</a></li>
+        <ol type ="a">
+            <li><a href="#CurvaAprendizaje">Curva de Aprendizaje de Tecnologías</a></li>
+            <li><a href="#IBMCloud">IBM Cloud Lite</a></li>
+        </ol>
+        <li><a href="#recomendaciones">Recomendaciones</a></li>
+    </ol>
+</ul> 
         {% endif %}
       </header>
       <section>
