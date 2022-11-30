@@ -123,7 +123,7 @@ src="/chatbot_ecci_documentation/Img/CreacionObject.png" alt="Creación de Servi
 src="/chatbot_ecci_documentation/Img/ConfiguracionIBMObject.png" alt="Configuración IBM Cloud Object Storage" align="center" width="700px">
 <p id="imagen17" style="text-align:center;font-size:0.8rem"><i>Imagen 17 Configuración IBM Cloud Object Storage</i></p>
 
-<b>Importante:</b>
+<b>Importante:</b><br>
 
 <ul>
     <li>La separación de archivos dentro de un servicio de almacenamiento de objetos no estructurados se realiza mediante buckets o depósitos.</li>
@@ -192,7 +192,7 @@ src="/chatbot_ecci_documentation/Img/SeccionPerfil360Dialog.png" alt="Sección d
 <p>A diferencia de otros proveedores, 360 Dialog no cobra tarifas por mensajería, solo maneja un cobro mensual por el alojamiento y conexión de cada número o cuenta de Whatsapp vinculada a la plataforma. A la fecha de esta documentación, el costo por cada número activo en la plataforma es de 49 EUR mensuales. Los costos de mensajería son directamente los dispuestos por Meta para el API empresarial de Whatsapp. Para mayor información acerca de los precios de cada servicio: </p>
 
 <a href="https://www.360dialog.com/whatsapp-business-api#pricing">https://www.360dialog.com/whatsapp-business-api#pricing</a>
-<a href="https://business.whatsapp.com/products/platform-pricing">https://business.whatsapp.com/products/platform-pricing</a>
+<a href="https://business.whatsapp.com/products/platform-pricing">https://business.whatsapp.com/products/platform-pricing</a><br>
 
 <h3 id="meta"><b>IV. Meta Business Platform</b></h3>
 
@@ -200,7 +200,7 @@ src="/chatbot_ecci_documentation/Img/SeccionPerfil360Dialog.png" alt="Sección d
 
 <p>La página principal del servicio está disponible en:</p>
 
-<a href="https://business.whatsapp.com/products/business-platform">https://business.whatsapp.com/products/business-platform</a>
+<a href="https://business.whatsapp.com/products/business-platform">https://business.whatsapp.com/products/business-platform</a><br>
 
 <p><b>NOTA:</b> Para el uso del servicio es necesario contar con una cuenta empresarial de Facebook (<a href="https://business.facebook.com">https://business.facebook.com</a>) correctamente verificada, así como una cuenta enlazada con la plataforma de desarrolladores de Facebook (<a href="https://developers.facebook.com">https://developers.facebook.com</a>). </p>
 
