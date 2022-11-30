@@ -25,7 +25,7 @@ src="/chatbot_ecci_documentation/Img/FuncionamientoWatson.png" alt="Funcionamien
 <p>La sección correspondiente interpreta los datos y luego los conecta a los diálogos de respuestas correspondientes.</p>
 <p>Existe una posibilidad en la cual no se tenga una respuesta para algún interrogante, y para este tipo casos, se dirigen dichas preguntas a un área comúnmente llamada “search skill”, la cual encuentra respuestas relevantes con base a la configuración y conocimiento que le hayamos aportado a nuestro bot.</p>
 
-<h4 id="crearasistente"><b>B. Crear un Asistente Watson Assistant</b></h5>
+<h4 id="crearasistente"><b>B. Crear un Asistente Watson Assistant</b></h4>
 
 <p>El servicio se crea desde la consola de IBM Cloud buscando el servicio en el catálogo, el plan Lite permite un uso gratuito con algunas limitaciones en el servicio, al crear el servicio se debe crear un skill el cual contendrá los componentes de Intenciones, Entidades y Diálogo.</p>
 
