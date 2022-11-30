@@ -542,7 +542,7 @@ src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura d
         src="/chatbot_ecci_documentation/Img/EndpointConsultaMetricas.png" alt="Ejemplo de Endpoint de Consulta de Métricas" align="center" width="700px">
         <p id="imagen59" style="text-align:center;font-size:0.8rem"><i>Imagen 59 Ejemplo de Endpoint de Consulta de Métricas.</i></p>
     <p>El endpoint recibe un objeto json con los campos necesarios para la consulta, con ellos el backend realiza la consulta específica para cada petición, la procesa y retorna la respuesta en formato JSON. Así como el ejemplo mostrado, se pueden encontrar los siguientes endpoints de consulta para la interfaz de métricas desde el backend:</p>
-    <ul type="square">
+    <ol>
 <li><b>/getsede:</b> Endpoint de consultas por cada sede disponible.</li>
 <li><b>/getcatsmenu:</b> Endpoint de consultas por cada categoría del menú principal.</li>
 <li><b>/getsolution:</b> Endpoint de respuestas a la pregunta de satisfacción.</li>
@@ -595,7 +595,7 @@ src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura d
 <li><b>/deletetag:</b> Endpoint para la eliminación de etiquetas.</li>
 <li><b>/deletetags:</b> Endpoint para la eliminación masiva de etiquetas</li>
 <li><b>/getmessages:</b> Endpoint para la consulta de mensajes asociados a un ticket.</li>
-    </ul><br>
+    </ol><br>
     <p>Por último, el backend utiliza express como middleware para habilitar las rutas correspondientes a la plataforma web Frontend, apuntando al directorio build generado por la compilación del componente Frontend del proyecto, explicado en la siguiente sección. A continuación, se muestra el fragmento de código que habilita esta característica en la Imagen 43.</p>
         <p style="text-align:center"><image
         src="/chatbot_ecci_documentation/Img/ConexionMiddlewareFrontend.png" alt="Conexión Middleware con Frontend" align="center" width="700px">
@@ -642,3 +642,40 @@ src="/chatbot_ecci_documentation/Img/EstructuradeArchivos.png" alt="Estructura d
 <li><b>package.json</b> Archivo de definición del proyecto, contiene la información necesaria para ejecutar el proyecto.</li>
 </ul>
 </ul>
+
+<h5 id="ibmcloudfonundry"><b>VII. ReactJS Frontend (Métricas)<</b></h5>
+
+<p>IBM Cloud Foundry es un servicio perteneciente a IBM Cloud, que permite crear instancias de varias plataformas de Cloud Foundry aisladas y con recursos a petición. Instancias de la ejecución de servicio de IBM Cloud Foundry Enterprise en su cuenta de IBM Cloud. El entorno se despliega en hardware aislado (clústeres de Kubernetes). Tiene un control completo sobre el entorno, que incluye el control de accesos, la capacidad, las actualizaciones de versiones, el uso de recursos y la supervisión. Además, la integración de Cloud Foundry en IBM Cloud permite a los desarrolladores aprovechar los servicios disponibles en su cuenta de IBM Cloud.</p>
+<p>Para poder usar el servicio de IBM® Cloud Foundry se necesita instalar CLI siguiendo las instrucciones que se encuentra en:</p>
+<p>
+<a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">https://docs.cloudfoundry.org/cf-cli/install-go-cli.html</a></p>
+<p>Para poder crear una instancia de SDK de NodeJS basada en Cloud Foundry, se debe buscar el servicio. Luego se selecciona el plan con el cual se va a trabajar, en este caso se selecciona el plan Lite que no tiene ningún costo pero que tiene como limitante un espacio de 256MB.</p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/CreacionServicioCloud.png" alt="Creación de Servicio de Cloud Foundry 1" align="center" width="700px">
+    <p id="imagen63" style="text-align:center;font-size:0.8rem"><i>Imagen 63 Creación de Servicio de Cloud Foundry 1.</i></p>
+    <p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/CreacionServicioCloud2.png" alt="Creación de Servicio de Cloud Foundry 2" align="center" width="700px">
+    <p id="imagen64" style="text-align:center;font-size:0.8rem"><i>Imagen 64 Creación de Servicio de Cloud Foundry 2.</i></p>
+<p>Al crear el servicio, se redirigirá a la información de este, donde también se podrá descargar un proyecto base para que pueda ser modificado y desplegado con Cloud Foundry y se podrá administrar las rutas de acceso y el nombre.</p>
+<p>Además de las instrucciones para loguearse desde nuestra máquina con el usuario y contraseña de nuestra cuenta. Este paso es necesario para poder subir el proyecto a la instancia creada.</p>
+
+<p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/DescripcionDespliegueCloud.png" alt="Descripción de Despliegue de Cloud Foundry en IBM Cloud" align="center" width="700px">
+<p id="imagen65" style="text-align:center;font-size:0.8rem"><i>Imagen 65 Descripción de Despliegue de Cloud Foundry en IBM Cloud.</i></p>
+
+<p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/DescripcionInstanciaCloud.png" alt="Descripción de Instancia de Cloud Foundry 
+    en Ejecución" align="center" width="700px">
+    <p id="imagen66" style="text-align:center;font-size:0.8rem"><i>Imagen 66 Descripción de Instancia de Cloud Foundry 
+    en Ejecución.</i></p>
+
+<p>Para poder subir el servicio es necesario que el proyecto tenga un archivo manifest.yml el cual contenga los datos del servicio creado.</p>
+
+<p style="text-align:center"><image
+    src="/chatbot_ecci_documentation/Img/ArchivoConfiguracionDespliegue.png" alt="Archivo de Configuración de Despliegue en Cloud Foundry" align="center" width="700px">
+    <p id="imagen67" style="text-align:center;font-size:0.8rem"><i>Imagen 67 Archivo de Configuración de Despliegue en Cloud Foundry.</i></p>
+
+<p>Para subir el proyecto en la instancia de NodeJS se usa el comando</p>
+<p><i>cf push chatbot_ecci</i></p>
+<p>Por último, es posible visualizar los logs de la instancia de NodeJS usando el comando</p>
+<p><i>cf logs chatbot_ecci</i></p>
