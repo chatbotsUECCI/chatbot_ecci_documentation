@@ -56,9 +56,9 @@ cuanto al servicio que ofrece.</p>
 
 <p>Facebook es muy riguroso en su habilitación de servicios comerciales, y es por esto que solicita que cualquier organización que requiera utilizar algunos de sus servicios principales de manera comercial deba estar debidamente registrada como organización o empresa comercial, y debe presentar documentos de soporte legal que certifiquen:</p>
 
-<p><b>A. Nombre Legal de la Organización</b></p>
+<p>a. Nombre Legal de la Organización</p>
 
-<p><b>B. Dirección Física de la Organización</b></p>
+<p>b. Dirección Física de la Organización</p>
 
 <p>Con este proceso Facebook valida la identidad de la organización que quiere usar sus
 servicios, para mantener seguros a sus usuarios de las entidades con las que trabaja;
