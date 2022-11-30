@@ -1068,7 +1068,7 @@ src="./Img/DetalleCloud.png" alt="Detalle de Archivo en Cloud Object Storage" al
 </ol>
 <h5 id="recomendaciones"></h5>
 
-##### <h5 style="font-size: 18.2px; margin-left:1.2rem">II. Recomendaciones</h5>
+##### II. Recomendaciones
 
 <p style="margin-left:2rem">A continuación, se mencionan algunas recomendaciones a tener en cuenta para la administración, mantenimiento y extensibilidad del proyecto.</p>
 <p style="margin-left:2rem">En primer lugar, es importante recordar que el proyecto está pensado en un principio para generar costos mínimos en cuanto al sostenimiento del sistema, para ello, se hace uso de ciertos planes gratuitos que ofrecen algunas plataformas, para aprovechar los recursos limitados disponibles en estos planes de uso y generar un producto final económico, sustentable y extensible en sus primeras etapas de lanzamiento, según las necesidades del territorio.</p>
