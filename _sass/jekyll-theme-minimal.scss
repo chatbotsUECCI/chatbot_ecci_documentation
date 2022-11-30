@@ -134,7 +134,7 @@ strong {
     display: none;
 }
 
-.links li:hover>ol {
+.links li:focus>ol {
     display: block;
 }
 
