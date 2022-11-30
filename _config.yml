@@ -1,8 +1,5 @@
 title: Documentación Técnica Chatbot Universidad ECCI
-description: En la presente página se encuentra la documentación del Chatbot de la Universidad ECCI.
-links: true
-    - title: "Email"
-      url: "mailto:renato@golia.tech"
-    - title: "Resume"
-      url: "/assets/files/resume-renato-golia.pdf"
+description: 
+<a href="#"> 1. Introducción.</a>
+
 theme: jekyll-theme-minimal
