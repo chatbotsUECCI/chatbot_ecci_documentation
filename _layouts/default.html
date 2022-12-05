@@ -23,69 +23,86 @@
 
         {% if site.show_downloads %}
             <ol class="links">
-                <li><a href="/chatbot_ecci_documentation/index.html">Introducción</a></li>
-                <li><a href="/chatbot_ecci_documentation/Chapters/chapter02_consideraciones.html">Consideraciones y Requerimientos Previos</a><i>▼</>
-                    <ol type="I">
-                        <li><a href="#cuentasUsuario">Cuentas de Usuario y Plataformas</a></li>
-                        <li><a href="#validacionCuentas">Validación de Cuentas</a></li>
-                    </ol>
+               <li><a href="/chatbot_ecci_documentation/index.html">Introducción</a></li>
+               <li><a href="/chatbot_ecci_documentation/Chapters/chapter02_consideraciones.html">Consideraciones y Requerimientos Previos</a><input type="checkbox" id="box" />
+                <label for="box">▼
+                  <ol type="I">
+                      <li><a href="#cuentasUsuario">Cuentas de Usuario y Plataformas</a></li>
+                      <li><a href="#validacionCuentas">Validación de Cuentas</a></li>
+                  </ol>
+                 </label>
                 </li>
-                <li><a href="/chatbot_ecci_documentation/Chapters/chapter03_descripcion_arquitectonica.html">Descripción Arquitectónica</a></li>
-                <li><a href="/chatbot_ecci_documentation/Chapters/chapter04_implementacion_despliegue.html">Implementación y Despliegue</a>
-                    <ol type="I">
-                        <li><a href="#IBMWatson">IBM Watson Assistant</a>
-                            <ol type="a">
-                                <li><a href="#funcionamiento">Funcionamiento</a></li>
-                                <li><a href="#crearasistente">Crear un Asistente Watson Assistant</a></li>
-                                <li><a href="#intenciones">Intenciones</a></li>
-                                <li><a href="#entidades">Entidades</a></li>
-                                <li><a href="#dialogo">Diálogo</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="#IBMObject">IBM Object Storage</a></li>
-                        <li><a href="#360dialog">360 Dialog</a></li>
-                        <li><a href="#meta">Meta Business Platform</a></li>
-                        <li><a href="#plataformameta">Plataforma de Administración de Meta para Whatsapp</a></li>
-                        <li><a href="#mongodb">MongoDB</a>
-                            <ol type="a">
-                                <li><a href="#ingresoplataforma">Ingreso a la Plataforma</a></li>
-                                <li><a href="#conectividad">Conectividad con NodeJS</a></li>
-                                <li><a href="#buscardatos">Buscar, Insertar, Actualizar y Eliminar Registros</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="#nodejs">NodeJS Backend (API)</a>
-                            <ol type="a">
-                                <li><a href="#clonandorepositorio">Clonando el Repositorio</a></li>
-                                <li><a href="#instalandodependencias">Instalando Dependencias</a></li>
-                                <li><a href="#ejecutarproyecto">Ejecutar el Proyecto en Desarrollo</a></li>
-                                <li><a href="#subiendoproyecto">Subiendo el Proyecto a Producción</a></li>
-                                <li><a href="#EstructuraArchivos">Estructura de Archivos del Proyecto</a></li>
-                                <li><a href="#ServiciosAPI">Servicios API Rest</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="#reactjs">ReactJS Frontend (Métricas)</a>
-                            <ol type="a">
-                                <li><a href="#clonandorepositoriofront">Clonando el Repositorio</a></li>
-                                <li><a href="#instalandodependeciasfront">Instalando Dependencias</a></li>
-                                <li><a href="#ejecutarproyectofront">Ejecutar el Proyecto en Desarrollo</a></li>
-                                <li><a href="#compilandoproyectofront">Compilando el Proyecto en Desarrollo</a></li>
-                                <li><a href="#estructuraarchivosfront">Estructura de Archivos del Proyecto</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="#ibmcloudfonundry">IBM Cloud Foundry</a></li>
-                    </ol>
-                </li>
-                <li><a href="/chatbot_ecci_documentation/Chapters/chapter05_balance_operacion_chatbot.html">Balance de Operación Chatbot</a>
-                    <ol type="I">
-                        <li><a href="#dificultades">Posibles Dificultades</a></li>
-                        <ol type="a">
+            <li><a href="/chatbot_ecci_documentation/Chapters/chapter03_descripcion_arquitectonica.html">Descripción Arquitectónica</a></li>
+            <li><a href="/chatbot_ecci_documentation/Chapters/chapter04_implementacion_despliegue.html">Implementación y Despliegue</a><input type="checkbox" id="box1" />
+                <label for="box1">▼
+                <ol type="I">
+                    <li><a href="#IBMWatson">IBM Watson Assistant</a><input type="checkbox" id="box2" />
+                        <label for="box2">▼
+                        <ol type="A">
+                            <li><a href="#funcionamiento">Funcionamiento</a></li>
+                            <li><a href="#crearasistente">Crear un Asistente Watson Assistant</a></li>
+                            <li><a href="#intenciones">Intenciones</a></li>
+                            <li><a href="#entidades">Entidades</a></li>
+                            <li><a href="#dialogo">Diálogo</a></li>
+                        </ol>
+                        </label>
+            </li>
+            <li><a href="#IBMObject">IBM Object Storage</a></li>
+            <li><a href="#360dialog">360 Dialog</a></li>
+            <li><a href="#meta">Meta Business Platform</a></li>
+            <li><a href="#plataformameta">Plataforma de Administración de Meta para Whatsapp</a></li>
+            <li><a href="#mongodb">MongoDB</a><input type="checkbox" id="box3" />
+                <label for="box3">▼
+                        <ol type="A">
+                            <li><a href="#ingresoplataforma">Ingreso a la Plataforma</a></li>
+                            <li><a href="#conectividad">Conectividad con NodeJS</a></li>
+                            <li><a href="#buscardatos">Buscar, Insertar, Actualizar y Eliminar Registros</a></li>
+                        </ol>
+                        </label>
+            </li>
+            <li><a href="#nodejs">NodeJS Backend (API)</a><input type="checkbox" id="box4" />
+                <label for="box4">▼
+                        <ol type="A">
+                            <li><a href="#clonandorepositorio">Clonando el Repositorio</a></li>
+                            <li><a href="#instalandodependencias">Instalando Dependencias</a></li>
+                            <li><a href="#ejecutarproyecto">Ejecutar el Proyecto en Desarrollo</a></li>
+                            <li><a href="#subiendoproyecto">Subiendo el Proyecto a Producción</a></li>
+                            <li><a href="#EstructuraArchivos">Estructura de Archivos del Proyecto</a></li>
+                            <li><a href="#ServiciosAPI">Servicios API Rest</a></li>
+                        </ol>
+                        </label>
+            </li>
+            <li><a href="#reactjs">ReactJS Frontend (Métricas)</a><input type="checkbox" id="box5" />
+                <label for="box5">▼
+                        <ol type="A">
+                            <li><a href="#clonandorepositoriofront">Clonando el Repositorio</a></li>
+                            <li><a href="#instalandodependeciasfront">Instalando Dependencias</a></li>
+                            <li><a href="#ejecutarproyectofront">Ejecutar el Proyecto en Desarrollo</a></li>
+                            <li><a href="#compilandoproyectofront">Compilando el Proyecto en Desarrollo</a></li>
+                            <li><a href="#estructuraarchivosfront">Estructura de Archivos del Proyecto</a></li>
+                        </ol>
+                        </label>
+            </li>
+            <li><a href="#ibmcloudfonundry">IBM Cloud Foundry</a></li>
+        </ol>
+        </label>
+        </li>
+        <li><a href="/chatbot_ecci_documentation/Chapters/chapter05_balance_operacion_chatbot.html">Balance de Operación Chatbot</a><input type="checkbox" id="box6" />
+            <label for="box6">▼
+            <ol type="I">
+                <li><a href="#dificultades">Posibles Dificultades</a><input type="checkbox" id="box7" />
+                    <label for="box7">▼
+                        <ol type="A">
                             <li><a href="#CurvaAprendizaje">Curva de Aprendizaje de Tecnologías</a></li>
                             <li><a href="#IBMCloud">IBM Cloud Lite</a></li>
                         </ol>
-                        <li><a href="#recomendaciones">Recomendaciones</a></li>
-                    </ol>
-                </li>
-            </ol>
+                    </label>
+        </li>
+        <li><a href="#recomendaciones">Recomendaciones</a></li>
+        </ol>
+        </label>
+        </li>
+        </ol>
         {% endif %}
       </header>
       <section>
