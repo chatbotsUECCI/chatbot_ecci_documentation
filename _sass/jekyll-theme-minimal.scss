@@ -130,8 +130,54 @@ strong {
   font-weight:700;
 }
 
-.links li{
-    font-size: 11px;
+.links li ol {
+    display: none;
+}
+
+input {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    font-size: 12px;
+    color:#267CB9;
+}
+
+label>ol {
+    font-size: 15px;
+}
+
+#box:checked+label>ol {
+    display: block;
+}
+
+#box1:checked+label>ol {
+    display: block;
+}
+
+#box2:checked+label>ol {
+    display: block;
+}
+
+#box3:checked+label>ol {
+    display: block;
+}
+
+#box4:checked+label>ol {
+    display: block;
+}
+
+#box5:checked+label>ol {
+    display: block;
+}
+
+#box6:checked+label>ol {
+    display: block;
+}
+
+#box7:checked+label>ol {
+    display: block;
 }
 
 header{
